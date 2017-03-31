@@ -1,8 +1,8 @@
 import numpy as np
 from tensorflow.python.training import moving_averages
 
-from release.google_net import config as cfg
-from release.frame.__init__ import *
+from release.googlenet.frame import *
+from release.googlenet.main import config as cfg
 
 NORM_KEY = 'NORM_KEY'
 

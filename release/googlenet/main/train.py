@@ -1,9 +1,8 @@
 import time
 
-import release.google_net.config as cfg
-from release.frame.__init__ import *
-from release.frame.read_data import read_and_decode
-
+from release.googlenet.frame.__init__ import *
+import release.googlenet.main.config as cfg
+from release.googlenet.frame.read_data import read_and_decode
 from snapshot.google_net.net import Net
 
 tf.logging.set_verbosity(tf.logging.INFO)
@@ -72,9 +71,9 @@ def main(_):
             # summary_op = tf.summary.merge_all() if cfg.is_writer_summary else 0
 
         sv = tf.train.Supervisor(is_chief=is_chief,
-                                 logdir=cfg.log_dir,
+                                 logdir=cfg.log_dir + "train/",
                                  init_op=init_op,
-                                 recovery_wait_secs=60,
+                                 recovery_wait_secs=180,
                                  local_init_op=local_init_op,
                                  ready_for_local_init_op=ready_for_local_init_op,
                                  summary_op=None,

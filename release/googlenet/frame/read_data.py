@@ -1,5 +1,5 @@
-from release.google_net import config as cfg
-from release.frame import *
+from release.googlenet.frame import *
+from release.googlenet.main import config as cfg
 
 
 def distort_color(image, scope=None):

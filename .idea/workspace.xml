@@ -2,34 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cf3325f-e36b-4299-86e0-83ffa1a61289" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/release/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/snapshot/__init__.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CRU_net/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CRU_net/net.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CRU_net/net_config.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CRU_net/train.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frame/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frame/config.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/google_net/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res_net/net.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res_net/net_config.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/res_net/train.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sg_net/net.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sg_net/net_config.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/sg_net/train.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frame/base_net.py" afterPath="$PROJECT_DIR$/release/frame/base_net.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frame/read_data.py" afterPath="$PROJECT_DIR$/release/frame/read_data.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/google_net/net.py" afterPath="$PROJECT_DIR$/release/google_net/net.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/google_net/net_config.py" afterPath="$PROJECT_DIR$/release/google_net/config.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/google_net/train.py" afterPath="$PROJECT_DIR$/release/google_net/train.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/res_net/__init__.py" afterPath="$PROJECT_DIR$/snapshot/vgg_net/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/sg_net/__init__.py" afterPath="$PROJECT_DIR$/release/google_net/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/vgg_net/__init__.py" afterPath="$PROJECT_DIR$/release/frame/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/vgg_net/net.py" afterPath="$PROJECT_DIR$/snapshot/vgg_net/net.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/vgg_net/net_config.py" afterPath="$PROJECT_DIR$/snapshot/vgg_net/net_config.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/vgg_net/train.py" afterPath="$PROJECT_DIR$/snapshot/vgg_net/train.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/release/googlenet/main/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/run.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tools/preprocess_data/write_records.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/release/frame/__init__.py" afterPath="$PROJECT_DIR$/release/googlenet/frame/__init__.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/release/frame/base_net.py" afterPath="$PROJECT_DIR$/release/googlenet/frame/base_net.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/release/frame/read_data.py" afterPath="$PROJECT_DIR$/release/googlenet/frame/read_data.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/release/google_net/__init__.py" afterPath="$PROJECT_DIR$/release/googlenet/__init__.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/release/google_net/config.py" afterPath="$PROJECT_DIR$/release/googlenet/main/config.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/release/google_net/net.py" afterPath="$PROJECT_DIR$/release/googlenet/main/net.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/release/google_net/train.py" afterPath="$PROJECT_DIR$/release/googlenet/main/train.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,56 +28,44 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="net.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/release/google_net/net.py">
+        <entry file="file://$PROJECT_DIR$/release/googlenet/main/net.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="549">
-              <caret line="189" column="13" lean-forward="true" selection-start-line="189" selection-start-column="13" selection-end-line="189" selection-end-column="13" />
+              <caret line="189" column="13" lean-forward="false" selection-start-line="189" selection-start-column="13" selection-end-line="189" selection-end-column="13" />
               <folding>
-                <element signature="e#0#44#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="train.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/release/google_net/train.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#0#52#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="read_data.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/release/frame/read_data.py">
+        <entry file="file://$PROJECT_DIR$/release/googlenet/frame/read_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1078">
-              <caret line="49" column="71" lean-forward="false" selection-start-line="49" selection-start-column="66" selection-end-line="49" selection-end-column="71" />
+            <state relative-caret-position="88">
+              <caret line="4" column="16" lean-forward="true" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
               <folding>
-                <element signature="e#0#44#0" expanded="true" />
+                <element signature="e#0#37#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/release/google_net/__init__.py">
+      <file leaf-file-name="run.sh" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/run.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="308">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/release/google_net/config.py">
+      <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/release/googlenet/main/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="15" column="45" lean-forward="true" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
+            <state relative-caret-position="-45">
+              <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -102,12 +73,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="image_ops_impl.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/anaconda3/lib/python3.5/site-packages/tensorflow/python/ops/image_ops_impl.py">
+      <file leaf-file-name="train.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/release/googlenet/main/train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="208" column="4" lean-forward="false" selection-start-line="208" selection-start-column="4" selection-end-line="208" selection-end-column="4" />
-              <folding />
+            <state relative-caret-position="373">
+              <caret line="92" column="64" lean-forward="false" selection-start-line="92" selection-start-column="46" selection-end-line="92" selection-end-column="64" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="write_records.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tools/preprocess_data/write_records.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-45">
+              <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+              <folding>
+                <element signature="e#15#38#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -121,6 +106,13 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find />
+      <find>save_model_path</find>
+      <find>summary_dir</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -132,7 +124,13 @@
         <option value="$PROJECT_DIR$/release/google_net/net.py" />
         <option value="$PROJECT_DIR$/release/frame/base_net.py" />
         <option value="$PROJECT_DIR$/release/google_net/train.py" />
+        <option value="$PROJECT_DIR$/tools/write_records/write_records.py" />
         <option value="$PROJECT_DIR$/release/google_net/config.py" />
+        <option value="$PROJECT_DIR$/tools/preprocess_data/write_records.py" />
+        <option value="$PROJECT_DIR$/tools/shell/run.sh" />
+        <option value="$PROJECT_DIR$/release/googlenet/main/train.py" />
+        <option value="$PROJECT_DIR$/release/googlenet/main/config.py" />
+        <option value="$PROJECT_DIR$/run.sh" />
       </list>
     </option>
   </component>
@@ -178,6 +176,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="release" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -196,7 +208,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="google_net" />
+              <option name="myItemId" value="googlenet" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -211,6 +223,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="release" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="googlenet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="release" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="googlenet" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -232,6 +270,8 @@
       <recent name="$PROJECT_DIR$/release" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/release/googlenet" />
       <recent name="$PROJECT_DIR$/snapshot" />
     </key>
   </component>
@@ -423,7 +463,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/release/frame/__init__.py">
+    <entry file="file://$PROJECT_DIR$/release/googlenet/frame/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="23" />
@@ -431,25 +471,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/anaconda3/lib/python3.5/site-packages/tensorflow/python/ops/image_ops_impl.py">
+    <entry file="file://$PROJECT_DIR$/release/googlenet/frame/base_net.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="208" column="4" lean-forward="false" selection-start-line="208" selection-start-column="4" selection-end-line="208" selection-end-column="4" />
+        <state relative-caret-position="989">
+          <caret line="249" column="59" lean-forward="true" selection-start-line="249" selection-start-column="59" selection-end-line="249" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/release/frame/read_data.py">
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.5/site-packages/tensorflow/python/lib/io/tf_record.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1078">
-          <caret line="49" column="71" lean-forward="false" selection-start-line="49" selection-start-column="66" selection-end-line="49" selection-end-column="71" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-23">
+          <caret line="95" column="34" lean-forward="false" selection-start-line="95" selection-start-column="27" selection-end-line="95" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/release/google_net/__init__.py">
+    <entry file="file://$PROJECT_DIR$/release/googlenet/main/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -457,43 +495,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/release/google_net/net.py">
+    <entry file="file://$PROJECT_DIR$/release/googlenet/main/net.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="549">
-          <caret line="189" column="13" lean-forward="true" selection-start-line="189" selection-start-column="13" selection-end-line="189" selection-end-column="13" />
+          <caret line="189" column="13" lean-forward="false" selection-start-line="189" selection-start-column="13" selection-end-line="189" selection-end-column="13" />
           <folding>
-            <element signature="e#0#44#0" expanded="true" />
+            <element signature="e#0#52#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/release/frame/base_net.py">
+    <entry file="file://$PROJECT_DIR$/release/googlenet/frame/read_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="989">
-          <caret line="249" column="59" lean-forward="true" selection-start-line="249" selection-start-column="59" selection-end-line="249" selection-end-column="59" />
+        <state relative-caret-position="88">
+          <caret line="4" column="16" lean-forward="true" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/release/google_net/train.py">
+    <entry file="file://$PROJECT_DIR$/release/googlenet/main/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+        <state relative-caret-position="-45">
+          <caret line="24" column="9" lean-forward="true" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.5/site-packages/tensorflow/python/ops/image_ops_impl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="196" column="9" lean-forward="true" selection-start-line="196" selection-start-column="9" selection-end-line="196" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/preprocess_data/write_records.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-45">
+          <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding>
+            <element signature="e#15#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/release/googlenet/main/train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="92" column="64" lean-forward="false" selection-start-line="92" selection-start-column="46" selection-end-line="92" selection-end-column="64" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/release/google_net/config.py">
+    <entry file="file://$PROJECT_DIR$/run.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="45" lean-forward="true" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="308">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

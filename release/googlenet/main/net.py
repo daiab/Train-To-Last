@@ -1,5 +1,5 @@
-from release.google_net import config as cfg
-from release.frame.base_net import BaseNet
+from release.googlenet.frame.base_net import BaseNet
+from release.googlenet.main import config as cfg
 
 
 class Net(BaseNet):

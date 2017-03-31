@@ -9,20 +9,18 @@ worker_hosts = ["10.29.150.102:2223", "10.29.150.102:2224", "10.29.150.102:2225"
 
 # common config param
 is_training = True
-log_dir="/home/mpiNode/daiab/log/"
-data_dir="/home/mpiNode/data/"
-save_dir="/home/mpiNode/daiab/save_model/"
+log_dir="log/"
 
-tfrecords_filename_train = [data_dir + 'train.tfrecords']
+data_dir="/home/mpiNode/data/"
+tfrecords_filename_train = [data_dir + 'ms_train_data.tfrecords']
 tfrecords_filename_test = [data_dir + 'test.tfrecords']
 
 test_txt_file = "/home/daianbo/code/Filelist_LFW_5Pts.txt"
 feature_txt_file = "/home/daianbo/data/feature.txt"
-save_model_path = save_dir + net_name + "_model.ckpt"
 
 
 # hyper parameters
-base_lr = 0.06
+base_lr = 0.08
 momentum = 0.9
 power=0.6
 weight_decay=0.0001
@@ -40,7 +38,6 @@ print_loss_step = 40
 queue_capacity = 10000
 num_threads = 2
 is_writer_summary=False
-summary_dir=log_dir + "summary"
 is_sync=True
 
 
@@ -48,7 +45,7 @@ def get_logger(file_name):
     logging.basicConfig(level=logging.DEBUG,
                               format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
                               datefmt='%b %d %Y %H:%M:%S',
-                              filename=log_dir + 'tensorflow.log',
+                              filename=log_dir + 'runtime/tensorflow.log',
                               filemode='w')
     return logging.getLogger(file_name)
 
