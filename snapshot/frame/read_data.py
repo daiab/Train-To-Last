@@ -1,5 +1,5 @@
-from frame.__init__ import *
-import frame.config as cfg
+from snapshot import frame as cfg
+from snapshot.frame import *
 
 
 def distort_color(image, thread_id=0, scope=None):

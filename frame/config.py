@@ -1,1 +1,0 @@
-from sg_net.net_config import *

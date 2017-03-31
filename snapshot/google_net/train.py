@@ -1,9 +1,10 @@
-import frame.config as cfg
-from frame.__init__ import *
-from vgg_net.net import Net
-from frame.read_data import read_and_decode
 import time
 
+import frame.config as cfg
+from frame.__init__ import *
+from frame.read_data import read_and_decode
+
+from snapshot.google_net.net import Net
 
 tf.logging.set_verbosity(tf.logging.DEBUG)
 logger = cfg.get_logger('tensorflow')
@@ -98,7 +99,7 @@ def main(_):
         # with sv.managed_session(server.target,
         with sv.prepare_or_wait_for_session(server.target,
                                 config=tf.ConfigProto(allow_soft_placement=True, log_device_placement=False)) as sess:
-            step = 0
+            step = 1
             coord = tf.train.Coordinator()
             threads = tf.train.start_queue_runners(sess=sess, coord=coord)
 
@@ -108,12 +109,13 @@ def main(_):
                 sv.start_queue_runners(sess, [chief_queue_runner])
 
             while not sv.should_stop() and step <= cfg.iter_num:
-                logger.info("==============================")
-                _, step = sess.run([train_op, global_step])
-                logger.info("%s: step == %d ;" %(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), step))
-                if (step + cfg.print_loss_step + 1) % cfg.print_loss_step == 0:
-                    ls, ac = sess.run([loss, net.layer["accuracy"]])
-                    logger.info("%s: step == %d;loss == %.5f; ac == %.5f;" % (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), step, ls, ac))
+                sess.run(train_op)
+                if step % cfg.print_loss_step == 0 and is_chief:
+                    gs, ls, ac, ls, lr= sess.run([global_step, loss, net.layer["accuracy"], loss, poly_decay_lr])
+                    logger.info("%s: s= %d; gs= %d; ls= %.5f; ac= %.5f; lr= %.5f"
+                                % (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), step, gs, ls, ac, lr))
+                step += 1
+
 
             coord.request_stop()
             coord.join(threads=threads)

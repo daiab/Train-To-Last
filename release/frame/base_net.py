@@ -1,7 +1,8 @@
-from frame.__init__ import *
-from tensorflow.python.training import moving_averages
-import frame.config as cfg
 import numpy as np
+from tensorflow.python.training import moving_averages
+
+from release.google_net import config as cfg
+from release.frame.__init__ import *
 
 NORM_KEY = 'NORM_KEY'
 
@@ -244,7 +245,6 @@ class BaseNet(object):
         # stddev = np.sqrt(2 / np.prod(x.get_shape().as_list()[1:]))
         if w_shape[0] is None:
             w_shape[0] = x.get_shape().as_list()[-1]
-        tf.contrib.layers.xavier_initializer()
         w = tf.get_variable(name=name + "-wx_b_w", shape=w_shape, dtype=tf.float32,
                             initializer=tf.contrib.layers.xavier_initializer())
                             # initializer=tf.truncated_normal_initializer(stddev=stddev, dtype=tf.float32))

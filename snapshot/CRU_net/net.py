@@ -1,5 +1,5 @@
-from frame.base_net import BaseNet
-import frame.config as cfg
+from snapshot import frame as cfg
+from snapshot.frame import BaseNet
 
 
 class Net(BaseNet):

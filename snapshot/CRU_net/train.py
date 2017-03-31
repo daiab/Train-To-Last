@@ -1,9 +1,10 @@
-import frame.config as cfg
-from frame.__init__ import *
-from res_net.net import Net
-from frame.read_data import read_and_decode
 import time
 
+from res_net.net import Net
+
+from snapshot import frame as cfg
+from snapshot.frame import *
+from snapshot.frame import read_and_decode
 
 tf.logging.set_verbosity(tf.logging.DEBUG)
 logger = cfg.get_logger('tensorflow')
