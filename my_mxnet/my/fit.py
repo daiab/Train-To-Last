@@ -45,12 +45,14 @@ def get_lr_scheduler(kv):
 
 def fit(network, data_loader, **kwargs):
     # kvstore
+    print("build dist start")
     kv = mx.kvstore.create(cfg.kv_store)
+    print("build dist over")
 
     # logging
     head = '%(asctime)-15s Node[' + str(kv.rank) + '] %(message)s'
     logging.basicConfig(level=logging.DEBUG, format=head,
-                        filename='/home/mpiNode/daiab/git/model/log/runtime/tensorflow.log',
+                        filename='/home/mpiNode/daiab/git/model/log/runtime/mxnet.log',
                         filemode='w')
     logging.info('start with arguments %s', cfg)
 
