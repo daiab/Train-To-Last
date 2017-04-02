@@ -77,7 +77,4 @@ for ndev in (2, 4):
     print('time for train lenent on %d GPU %f sec' % (
             ndev, time.time() - tic))
 
-net = mx.sym.Variable()
-net.list_arguments()
-net.list_outputs()
 

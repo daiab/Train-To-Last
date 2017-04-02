@@ -2,83 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cf3325f-e36b-4299-86e0-83ffa1a61289" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/my_mxnet/my/googlenet.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/.idea/misc.xml" afterPath="$PROJECT_DIR$/my_mxnet/.idea/misc.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/.idea/modules.xml" afterPath="$PROJECT_DIR$/my_mxnet/.idea/modules.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/.idea/mxnet.iml" afterPath="$PROJECT_DIR$/my_mxnet/.idea/mxnet.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/.idea/workspace.xml" afterPath="$PROJECT_DIR$/my_mxnet/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/__init__.py" afterPath="$PROJECT_DIR$/my_mxnet/my/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/fc.py" afterPath="$PROJECT_DIR$/my_mxnet/fc.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/README.md" afterPath="$PROJECT_DIR$/my_mxnet/image/README.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/__init__.py" afterPath="$PROJECT_DIR$/my_mxnet/image/symbols/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/benchmark.py" afterPath="$PROJECT_DIR$/my_mxnet/image/benchmark.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/benchmark_score.py" afterPath="$PROJECT_DIR$/my_mxnet/image/benchmark_score.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/common/__init__.py" afterPath="$PROJECT_DIR$/my_mxnet/image/common/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/common/data.py" afterPath="$PROJECT_DIR$/my_mxnet/image/common/data.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/common/find_mxnet.py" afterPath="$PROJECT_DIR$/my_mxnet/image/common/find_mxnet.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/common/fit.py" afterPath="$PROJECT_DIR$/my_mxnet/image/common/fit.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/common/modelzoo.py" afterPath="$PROJECT_DIR$/my_mxnet/image/common/modelzoo.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/common/util.py" afterPath="$PROJECT_DIR$/my_mxnet/image/common/util.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/data/caltech256.sh" afterPath="$PROJECT_DIR$/my_mxnet/image/data/caltech256.sh" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/data/imagenet1k-val.sh" afterPath="$PROJECT_DIR$/my_mxnet/image/data/imagenet1k-val.sh" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/fine-tune.py" afterPath="$PROJECT_DIR$/my_mxnet/image/fine-tune.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/predict-cpp/CMakeLists.txt" afterPath="$PROJECT_DIR$/my_mxnet/image/predict-cpp/CMakeLists.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/predict-cpp/Makefile" afterPath="$PROJECT_DIR$/my_mxnet/image/predict-cpp/Makefile" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/predict-cpp/README.md" afterPath="$PROJECT_DIR$/my_mxnet/image/predict-cpp/README.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/predict-cpp/image-classification-predict.cc" afterPath="$PROJECT_DIR$/my_mxnet/image/predict-cpp/image-classification-predict.cc" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/score.py" afterPath="$PROJECT_DIR$/my_mxnet/image/score.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/symbol_alexnet.R" afterPath="$PROJECT_DIR$/my_mxnet/image/symbol_alexnet.R" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/symbol_googlenet.R" afterPath="$PROJECT_DIR$/my_mxnet/image/symbol_googlenet.R" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/symbol_inception-bn-28-small.R" afterPath="$PROJECT_DIR$/my_mxnet/image/symbol_inception-bn-28-small.R" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/symbol_inception-bn.R" afterPath="$PROJECT_DIR$/my_mxnet/image/symbol_inception-bn.R" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/symbol_inception-resnet-v1.R" afterPath="$PROJECT_DIR$/my_mxnet/image/symbol_inception-resnet-v1.R" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/symbol_inception-resnet-v2.R" afterPath="$PROJECT_DIR$/my_mxnet/image/symbol_inception-resnet-v2.R" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/symbol_lenet.R" afterPath="$PROJECT_DIR$/my_mxnet/image/symbol_lenet.R" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/symbol_mlp.R" afterPath="$PROJECT_DIR$/my_mxnet/image/symbol_mlp.R" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/symbol_resnet-28-small.R" afterPath="$PROJECT_DIR$/my_mxnet/image/symbol_resnet-28-small.R" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/symbol_resnet-v2.R" afterPath="$PROJECT_DIR$/my_mxnet/image/symbol_resnet-v2.R" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/symbol_resnet.R" afterPath="$PROJECT_DIR$/my_mxnet/image/symbol_resnet.R" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/symbol_unet.R" afterPath="$PROJECT_DIR$/my_mxnet/image/symbol_unet.R" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/symbol_vgg.R" afterPath="$PROJECT_DIR$/my_mxnet/image/symbol_vgg.R" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/symbols/README.md" afterPath="$PROJECT_DIR$/my_mxnet/image/symbols/README.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/symbols/__init__.py" afterPath="$PROJECT_DIR$/my_mxnet/image/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/symbols/alexnet.py" afterPath="$PROJECT_DIR$/my_mxnet/image/symbols/alexnet.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/symbols/alexnet_fp16.py" afterPath="$PROJECT_DIR$/my_mxnet/image/symbols/alexnet_fp16.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/symbols/googlenet.py" afterPath="$PROJECT_DIR$/my_mxnet/image/symbols/googlenet.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/symbols/inception-bn.py" afterPath="$PROJECT_DIR$/my_mxnet/image/symbols/inception-bn.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/symbols/inception-resnet-v2.py" afterPath="$PROJECT_DIR$/my_mxnet/image/symbols/inception-resnet-v2.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/symbols/inception-v3.py" afterPath="$PROJECT_DIR$/my_mxnet/image/symbols/inception-v3.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/symbols/lenet.py" afterPath="$PROJECT_DIR$/my_mxnet/image/symbols/lenet.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/symbols/mlp.py" afterPath="$PROJECT_DIR$/my_mxnet/image/symbols/mlp.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/symbols/resnet.py" afterPath="$PROJECT_DIR$/my_mxnet/image/symbols/resnet.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/symbols/resnet_fp16.py" afterPath="$PROJECT_DIR$/my_mxnet/image/symbols/resnet_fp16.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/symbols/resnext.py" afterPath="$PROJECT_DIR$/my_mxnet/image/symbols/resnext.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/symbols/vgg.py" afterPath="$PROJECT_DIR$/my_mxnet/image/symbols/vgg.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/test_score.py" afterPath="$PROJECT_DIR$/my_mxnet/image/test_score.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/train_cifar10.R" afterPath="$PROJECT_DIR$/my_mxnet/image/train_cifar10.R" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/train_cifar10.py" afterPath="$PROJECT_DIR$/my_mxnet/image/train_cifar10.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/train_imagenet.R" afterPath="$PROJECT_DIR$/my_mxnet/image/train_imagenet.R" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/train_imagenet.py" afterPath="$PROJECT_DIR$/my_mxnet/image/train_imagenet.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/train_mnist.R" afterPath="$PROJECT_DIR$/my_mxnet/image/train_mnist.R" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/train_mnist.py" afterPath="$PROJECT_DIR$/my_mxnet/image/train_mnist.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/image/train_model.R" afterPath="$PROJECT_DIR$/my_mxnet/image/train_model.R" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/multi_card.py" afterPath="$PROJECT_DIR$/my_mxnet/multi_card.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/my/__init__.py" afterPath="$PROJECT_DIR$/my_mxnet/__init__.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/my/config.py" afterPath="$PROJECT_DIR$/my_mxnet/my/config.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/my/fit.py" afterPath="$PROJECT_DIR$/my_mxnet/my/fit.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/my/read_data.py" afterPath="$PROJECT_DIR$/my_mxnet/my/read_data.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/my/train.py" afterPath="$PROJECT_DIR$/my_mxnet/my/train.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/my/wirte_records.py" afterPath="$PROJECT_DIR$/my_mxnet/my/write_records.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/my/write.py" afterPath="$PROJECT_DIR$/my_mxnet/my/write_test.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/t10k-images-idx3-ubyte.gz" afterPath="$PROJECT_DIR$/my_mxnet/t10k-images-idx3-ubyte.gz" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/t10k-labels-idx1-ubyte.gz" afterPath="$PROJECT_DIR$/my_mxnet/t10k-labels-idx1-ubyte.gz" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/test.py" afterPath="$PROJECT_DIR$/my_mxnet/test.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/train-images-idx3-ubyte.gz" afterPath="$PROJECT_DIR$/my_mxnet/train-images-idx3-ubyte.gz" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/train-labels-idx1-ubyte.gz" afterPath="$PROJECT_DIR$/my_mxnet/train-labels-idx1-ubyte.gz" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mxnet/write_image.py" afterPath="$PROJECT_DIR$/my_mxnet/write_image.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/model.iml" afterPath="$PROJECT_DIR$/.idea/model.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_mxnet/my/config.py" afterPath="$PROJECT_DIR$/my_mxnet/my/config.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_mxnet/my/fit.py" afterPath="$PROJECT_DIR$/my_mxnet/my/fit.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_mxnet/test.py" afterPath="$PROJECT_DIR$/my_mxnet/test.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -92,72 +18,96 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="read_data.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/my_mxnet/my/read_data.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="30" />
-                  <folding>
-                    <element signature="e#0#18#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="fit.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/my_mxnet/my/fit.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="309">
-                  <caret line="56" column="11" lean-forward="false" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="11" />
-                  <folding>
-                    <element signature="e#0#18#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="train.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/my_mxnet/my/train.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="69">
-                  <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#0#35#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="config.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/my_mxnet/my/config.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="161">
-                  <caret line="7" column="38" lean-forward="false" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="googlenet.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/my_mxnet/my/googlenet.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="759">
-                  <caret line="39" column="59" lean-forward="false" selection-start-line="39" selection-start-column="59" selection-end-line="39" selection-end-column="59" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="read_data.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my_mxnet/my/read_data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="309">
+              <caret line="17" column="45" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="45" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fit.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/my_mxnet/my/fit.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="460">
+              <caret line="77" column="36" lean-forward="false" selection-start-line="77" selection-start-column="36" selection-end-line="77" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_score.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my_mxnet/image/test_score.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="score.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my_mxnet/image/score.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="284">
+              <caret line="59" column="29" lean-forward="false" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my_mxnet/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="851">
+              <caret line="73" column="15" lean-forward="false" selection-start-line="73" selection-start-column="10" selection-end-line="73" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="multi_card.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my_mxnet/multi_card.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1802">
+              <caret line="126" column="8" lean-forward="false" selection-start-line="126" selection-start-column="4" selection-end-line="126" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my_mxnet/my/config.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="17" column="36" lean-forward="true" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="train.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my_mxnet/my/train.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="5" column="6" lean-forward="true" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -172,6 +122,7 @@
       <find>save_model_path</find>
       <find>summary_dir</find>
       <find>data_val</find>
+      <find>network</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -196,8 +147,9 @@
         <option value="$PROJECT_DIR$/mxnet/my/train.py" />
         <option value="$PROJECT_DIR$/my_mxnet/my/read_data.py" />
         <option value="$PROJECT_DIR$/my_mxnet/my/train.py" />
-        <option value="$PROJECT_DIR$/my_mxnet/my/fit.py" />
+        <option value="$PROJECT_DIR$/my_mxnet/test.py" />
         <option value="$PROJECT_DIR$/my_mxnet/my/config.py" />
+        <option value="$PROJECT_DIR$/my_mxnet/my/fit.py" />
       </list>
     </option>
   </component>
@@ -258,6 +210,60 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="release" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="release" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="googlenet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="release" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="googlenet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="my_mxnet" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -297,6 +303,7 @@
       <recent name="$PROJECT_DIR$/snapshot" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/my_mxnet/my" />
       <recent name="$PROJECT_DIR$/mxnet/my" />
       <recent name="$PROJECT_DIR$/release" />
     </key>
@@ -454,7 +461,7 @@
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -600,16 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/release/googlenet/main/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="24" column="9" lean-forward="false" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#14#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/release/googlenet/main/train.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
@@ -659,54 +656,130 @@
         <state relative-caret-position="767">
           <caret line="52" column="4" lean-forward="false" selection-start-line="52" selection-start-column="4" selection-end-line="52" selection-end-column="41" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my_mxnet/my/train.py">
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.5/site-packages/mxnet/kvstore.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="330">
+          <caret line="384" column="4" lean-forward="false" selection-start-line="384" selection-start-column="4" selection-end-line="384" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_mxnet/my/googlenet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="32" column="32" lean-forward="false" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.5/site-packages/mxnet/module/base_module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="314" column="8" lean-forward="false" selection-start-line="314" selection-start-column="8" selection-end-line="314" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/anaconda3/lib/python3.5/site-packages/mxnet/module/module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="41" column="8" lean-forward="false" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_mxnet/fc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-843">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_mxnet/multi_card.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1802">
+          <caret line="126" column="8" lean-forward="false" selection-start-line="126" selection-start-column="4" selection-end-line="126" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_mxnet/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="851">
+          <caret line="73" column="15" lean-forward="false" selection-start-line="73" selection-start-column="10" selection-end-line="73" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_mxnet/image/score.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="59" column="29" lean-forward="false" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/my_mxnet/my/read_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="30" />
+        <state relative-caret-position="309">
+          <caret line="17" column="45" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="45" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my_mxnet/my/googlenet.py">
+    <entry file="file://$PROJECT_DIR$/my_mxnet/my/train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="759">
-          <caret line="39" column="59" lean-forward="false" selection-start-line="39" selection-start-column="59" selection-end-line="39" selection-end-column="59" />
+        <state relative-caret-position="115">
+          <caret line="5" column="6" lean-forward="true" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/release/googlenet/main/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="491">
+          <caret line="47" column="30" lean-forward="true" selection-start-line="47" selection-start-column="30" selection-end-line="48" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_mxnet/image/test_score.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_mxnet/my/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="36" lean-forward="true" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/my_mxnet/my/fit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="56" column="11" lean-forward="false" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="11" />
+        <state relative-caret-position="460">
+          <caret line="77" column="36" lean-forward="false" selection-start-line="77" selection-start-column="36" selection-end-line="77" selection-end-column="36" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my_mxnet/my/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="38" lean-forward="false" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>

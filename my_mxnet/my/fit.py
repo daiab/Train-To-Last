@@ -49,7 +49,9 @@ def fit(network, data_loader, **kwargs):
 
     # logging
     head = '%(asctime)-15s Node[' + str(kv.rank) + '] %(message)s'
-    logging.basicConfig(level=logging.DEBUG, format=head)
+    logging.basicConfig(level=logging.DEBUG, format=head,
+                        filename='/home/mpiNode/daiab/git/model/log/runtime/tensorflow.log',
+                        filemode='w')
     logging.info('start with arguments %s', cfg)
 
     # data iterators
@@ -73,6 +75,7 @@ def fit(network, data_loader, **kwargs):
         aux_params = kwargs['aux_params']
     else:
         sym, arg_params, aux_params = load_model(kv.rank)
+        print("load model ========  ")
         if sym is not None:
             assert sym.tojson() == network.tojson()
 

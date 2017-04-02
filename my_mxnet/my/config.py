@@ -21,7 +21,7 @@ test_io=True
 # show progress for every n batches
 disp_batches=40
 # list of gpus to run, e.g. 0 or 0,2,5. empty means using cpu
-gpus=0,1,2,3
+gpus="0,1,2,3"
 # momentum  for sgd
 mom=0.9
 # weight decay for sgd
@@ -31,7 +31,7 @@ monitor=0
 #the neural network to use
 network="googlenet"
 # report the top-k accuracy. 0 means no report.
-top_k=1
+top_k=4
 # the optimizer type default='sgd'
 optimizer='sgd'
 # max num of epochs
@@ -44,32 +44,16 @@ num_workers = 4
 # padding the input image
 pad_size=0
 # the number of classes
-num_classes=0
+num_classes=10575
 # the number of training examples
-num_examples=0
+num_examples=390000
 # the image shape feed into the network
-image_shape=(3,224,224)
+image_shape=(3, 224, 224)
 # a tuple of size 3 for the mean rgb
 rgb_mean=[255, 255, 255]
 # if or not randomly crop the image
 random_crop=1
-# max ratio to scale
-max_random_scale=1
-# min ratio to scale, should >= img_size/input_shape. otherwise use --pad-size
-min_random_scale=0
-# max change of aspect ratio, whose range is [0, 1]
-max_random_aspect_ratio=0
-# max change of hue, whose range is [0, 180]
-max_random_h=0
-# max change of saturation, whose range is [0, 255]
-max_random_s=0
-# max change of intensity, whose range is [0, 255]
 max_random_l=0
-# max angle to rotate, whose range is [0, 360]
-max_random_rotate_angle=0
-# max ratio to shear, whose range is [0, 1]
-max_random_shear_ratio=0
-# if or not randomly flip horizontally
-random_mirror=0
+random_mirror=1
 data_nthreads=4
 
