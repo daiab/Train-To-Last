@@ -31,7 +31,7 @@ def get_rec_iter(kv=None):
         shuffle             = True,
         num_parts           = nworker,
         part_index          = rank)
-    if cfg.data_val is None:
+    if cfg.data_valid is None:
         return (train, None)
     valid = mx.io.ImageRecordIter(
         path_imgrec         = cfg.data_valid,

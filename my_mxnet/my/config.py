@@ -13,7 +13,7 @@ lr_factor=0.5
 # the batch size
 batch_size=224
 # key-value store type
-kv_store="dist"
+kv_store="local" #"dist"
 # the epochs to reduce the lr, e.g. 30,60
 lr_step_epochs=(10000, 20000, 40000)
 # 1 means test reading speed without training
