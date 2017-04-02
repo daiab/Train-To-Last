@@ -72,7 +72,7 @@ class BaseSymble(object):
                                      stride=(stride_h, stride_w), pad=padding,
                                      no_bias=not bias, name=name)
         if bn:
-            conv = batch_norm(conv)
+            conv = self.batch_norm(conv)
         if relu:
             cong = mx.symbol.Activation(data=conv, act_type='relu', name='activation')
         return tmp
