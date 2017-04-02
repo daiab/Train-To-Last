@@ -128,7 +128,7 @@ class BaseSymble(object):
 
     @layer
     def concat(self, input, axis=0, name="concat"):
-        return mx.symbol.Concat(*input, dim=axis, name='concat-' % name)
+        return mx.symbol.Concat(*input, dim=axis, name='concat-' + name)
 
     @layer
     def fc(self, input, out_num, name="fc"):
