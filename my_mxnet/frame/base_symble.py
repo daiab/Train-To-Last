@@ -132,7 +132,7 @@ class BaseSymble(object):
 
     @layer
     def fc(self, input, out_num, name="fc"):
-        flatten = mx.sym.Flatten(data=pool6, name="flatten-" + name)
+        flatten = mx.sym.Flatten(data=input, name="flatten-" + name)
         return mx.sym.FullyConnected(data=flatten, num_hidden=out_num, name="full-connect-" + name)
 
     @layer
