@@ -27,7 +27,7 @@ mom=0.9
 # weight decay for sgd
 wd=0.0001
 # log network parameters every N iters if larger than 0
-monitor=0
+monitor=100
 #the neural network to use
 network="googlenet"
 # report the top-k accuracy. 0 means no report.
