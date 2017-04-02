@@ -74,8 +74,8 @@ class BaseSymble(object):
         if bn:
             conv = self.batch_norm(conv)
         if relu:
-            cong = mx.symbol.Activation(data=conv, act_type='relu', name='activation')
-        return tmp
+            conv = mx.symbol.Activation(data=conv, act_type='relu', name='activation')
+        return conv
 
     def lrn(self,
             input,
