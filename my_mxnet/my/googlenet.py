@@ -1,55 +1,191 @@
-"""References:
+from my_mxnet.frame.base_symble import BaseSymble
+import my_mxnet.my.config as cfg
 
-Szegedy, Christian, Wei Liu, Yangqing Jia, Pierre Sermanet, Scott Reed, Dragomir
-Anguelov, Dumitru Erhan, Vincent Vanhoucke, and Andrew Rabinovich. "Going deeper
-with convolutions." arXiv preprint arXiv:1409.4842 (2014).
 
-"""
+class Symble(BaseSymble):
+    def def_model(self):
+        (self.feed('data')
+         .conv2d(7, 7, 64, 2, 2, padding=(2, 2), name='conv1_7x7_s2')
+         .max_pool(3, 3, 2, 2, padding=(1, 1), name='pool1_3x3_s2')
+         # .lrn(2, 2e-05, 0.75, name='pool1_norm1')
+         .conv2d(1, 1, 64, 1, 1, name='conv2_3x3_reduce')
+         .conv2d(3, 3, 192, 1, 1, padding=(1, 1), name='conv2_3x3')
+         # .lrn(2, 2e-05, 0.75, name='conv2_norm2')
+         .max_pool(3, 3, 2, 2, padding=(1, 1), name='pool2_3x3_s2')
+         .conv2d(1, 1, 64, 1, 1, name='inception_3a_1x1'))
 
-import mxnet as mx
+        (self.feed('pool2_3x3_s2')
+         .conv2d(1, 1, 96, 1, 1, name='inception_3a_3x3_reduce')
+         .conv2d(3, 3, 128, 1, 1, padding=(1, 1), name='inception_3a_3x3'))
 
-def ConvFactory(data, num_filter, kernel, stride=(1,1), pad=(0, 0), name=None, suffix=''):
-    conv = mx.symbol.Convolution(data=data, num_filter=num_filter, kernel=kernel, stride=stride, pad=pad, name='conv_%s%s' %(name, suffix))
-    act = mx.symbol.Activation(data=conv, act_type='relu', name='relu_%s%s' %(name, suffix))
-    return act
+        (self.feed('pool2_3x3_s2')
+         .conv2d(1, 1, 16, 1, 1, name='inception_3a_5x5_reduce')
+         .conv2d(5, 5, 32, 1, 1, padding=(2, 2), name='inception_3a_5x5'))
 
-def InceptionFactory(data, num_1x1, num_3x3red, num_3x3, num_d5x5red, num_d5x5, pool, proj, name):
-    # 1x1
-    c1x1 = ConvFactory(data=data, num_filter=num_1x1, kernel=(1, 1), name=('%s_1x1' % name))
-    # 3x3 reduce + 3x3
-    c3x3r = ConvFactory(data=data, num_filter=num_3x3red, kernel=(1, 1), name=('%s_3x3' % name), suffix='_reduce')
-    c3x3 = ConvFactory(data=c3x3r, num_filter=num_3x3, kernel=(3, 3), pad=(1, 1), name=('%s_3x3' % name))
-    # double 3x3 reduce + double 3x3
-    cd5x5r = ConvFactory(data=data, num_filter=num_d5x5red, kernel=(1, 1), name=('%s_5x5' % name), suffix='_reduce')
-    cd5x5 = ConvFactory(data=cd5x5r, num_filter=num_d5x5, kernel=(5, 5), pad=(2, 2), name=('%s_5x5' % name))
-    # pool + proj
-    pooling = mx.symbol.Pooling(data=data, kernel=(3, 3), stride=(1, 1), pad=(1, 1), pool_type=pool, name=('%s_pool_%s_pool' % (pool, name)))
-    cproj = ConvFactory(data=pooling, num_filter=proj, kernel=(1, 1), name=('%s_proj' %  name))
-    # concat
-    concat = mx.symbol.Concat(*[c1x1, c3x3, cd5x5, cproj], name='ch_concat_%s_chconcat' % name)
-    return concat
+        (self.feed('pool2_3x3_s2')
+         .max_pool(3, 3, 1, 1, padding=(1, 1), name='inception_3a_pool')
+         .conv2d(1, 1, 32, 1, 1, name='inception_3a_pool_proj'))
 
-def get_symbol(num_classes = 10575):
-    data = mx.sym.Variable("data")
-    conv1 = ConvFactory(data, 64, kernel=(7, 7), stride=(2 ,2), pad=(3, 3), name="conv1")
-    pool1 = mx.sym.Pooling(conv1, kernel=(3, 3), stride=(2, 2), pool_type="max")
-    conv2 = ConvFactory(pool1, 64, kernel=(1, 1), stride=(1,1), name="conv2")
-    conv3 = ConvFactory(conv2, 192, kernel=(3, 3), stride=(1, 1), pad=(1,1), name="conv3")
-    pool3 = mx.sym.Pooling(conv3, kernel=(3, 3), stride=(2, 2), pool_type="max")
+        (self.feed('inception_3a_1x1',
+                   'inception_3a_3x3',
+                   'inception_3a_5x5',
+                   'inception_3a_pool_proj')
+         .concat(axis=1, name='inception_3a_output')
+         .conv2d(1, 1, 128, 1, 1, name='inception_3b_1x1'))
 
-    in3a = InceptionFactory(pool3, 64, 96, 128, 16, 32, "max", 32, name="in3a")
-    in3b = InceptionFactory(in3a, 128, 128, 192, 32, 96, "max", 64, name="in3b")
-    pool4 = mx.sym.Pooling(in3b, kernel=(3, 3), stride=(2, 2), pool_type="max")
-    in4a = InceptionFactory(pool4, 192, 96, 208, 16, 48, "max", 64, name="in4a")
-    in4b = InceptionFactory(in4a, 160, 112, 224, 24, 64, "max", 64, name="in4b")
-    in4c = InceptionFactory(in4b, 128, 128, 256, 24, 64, "max", 64, name="in4c")
-    in4d = InceptionFactory(in4c, 112, 144, 288, 32, 64, "max", 64, name="in4d")
-    in4e = InceptionFactory(in4d, 256, 160, 320, 32, 128, "max", 128, name="in4e")
-    pool5 = mx.sym.Pooling(in4e, kernel=(3, 3), stride=(2, 2), pool_type="max")
-    in5a = InceptionFactory(pool5, 256, 160, 320, 32, 128, "max", 128, name="in5a")
-    in5b = InceptionFactory(in5a, 384, 192, 384, 48, 128, "max", 128, name="in5b")
-    pool6 = mx.sym.Pooling(in5b, kernel=(7, 7), stride=(1,1), pool_type="avg")
-    flatten = mx.sym.Flatten(data=pool6)
-    fc1 = mx.sym.FullyConnected(data=flatten, num_hidden=num_classes)
-    softmax = mx.symbol.SoftmaxOutput(data=fc1, name='softmax')
-    return softmax
+        (self.feed('inception_3a_output')
+         .conv2d(1, 1, 128, 1, 1, name='inception_3b_3x3_reduce')
+         .conv2d(3, 3, 192, 1, 1, padding=(1, 1), name='inception_3b_3x3'))
+
+        (self.feed('inception_3a_output')
+         .conv2d(1, 1, 32, 1, 1, name='inception_3b_5x5_reduce')
+         .conv2d(5, 5, 96, 1, 1, padding=(2, 2), name='inception_3b_5x5'))
+
+        (self.feed('inception_3a_output')
+         .max_pool(3, 3, 1, 1, padding=(1, 1), name='inception_3b_pool')
+         .conv2d(1, 1, 64, 1, 1, name='inception_3b_pool_proj'))
+
+        (self.feed('inception_3b_1x1',
+                   'inception_3b_3x3',
+                   'inception_3b_5x5',
+                   'inception_3b_pool_proj')
+         .concat(axis=1, name='inception_3b_output')
+         .max_pool(3, 3, 2, 2, padding=(1, 1), name='pool3_3x3_s2')
+         .conv2d(1, 1, 192, 1, 1, name='inception_4a_1x1'))
+
+        (self.feed('pool3_3x3_s2')
+         .conv2d(1, 1, 96, 1, 1, name='inception_4a_3x3_reduce')
+         .conv2d(3, 3, 208, 1, 1, padding=(1, 1), name='inception_4a_3x3'))
+
+        (self.feed('pool3_3x3_s2')
+         .conv2d(1, 1, 16, 1, 1, name='inception_4a_5x5_reduce')
+         .conv2d(5, 5, 48, 1, 1, padding=(2, 2), name='inception_4a_5x5'))
+
+        (self.feed('pool3_3x3_s2')
+         .max_pool(3, 3, 1, 1, padding=(1, 1), name='inception_4a_pool')
+         .conv2d(1, 1, 64, 1, 1, name='inception_4a_pool_proj'))
+
+        (self.feed('inception_4a_1x1',
+                   'inception_4a_3x3',
+                   'inception_4a_5x5',
+                   'inception_4a_pool_proj')
+         .concat(axis=1, name='inception_4a_output')
+         .conv2d(1, 1, 160, 1, 1, name='inception_4b_1x1'))
+
+        (self.feed('inception_4a_output')
+         .conv2d(1, 1, 112, 1, 1, name='inception_4b_3x3_reduce')
+         .conv2d(3, 3, 224, 1, 1, padding=(1, 1), name='inception_4b_3x3'))
+
+        (self.feed('inception_4a_output')
+         .conv2d(1, 1, 24, 1, 1, name='inception_4b_5x5_reduce')
+         .conv2d(5, 5, 64, 1, 1, padding=(2, 2), name='inception_4b_5x5'))
+
+        (self.feed('inception_4a_output')
+         .max_pool(3, 3, 1, 1, padding=(1, 1), name='inception_4b_pool')
+         .conv2d(1, 1, 64, 1, 1, name='inception_4b_pool_proj'))
+
+        (self.feed('inception_4b_1x1',
+                   'inception_4b_3x3',
+                   'inception_4b_5x5',
+                   'inception_4b_pool_proj')
+         .concat(axis=1, name='inception_4b_output')
+         .conv2d(1, 1, 128, 1, 1, name='inception_4c_1x1'))
+
+        (self.feed('inception_4b_output')
+         .conv2d(1, 1, 128, 1, 1, name='inception_4c_3x3_reduce')
+         .conv2d(3, 3, 256, 1, 1, padding=(1, 1), name='inception_4c_3x3'))
+
+        (self.feed('inception_4b_output')
+         .conv2d(1, 1, 24, 1, 1, name='inception_4c_5x5_reduce')
+         .conv2d(5, 5, 64, 1, 1, name='inception_4c_5x5'))
+
+        (self.feed('inception_4b_output')
+         .max_pool(3, 3, 1, 1, name='inception_4c_pool')
+         .conv2d(1, 1, 64, 1, 1, padding=(2, 2), name='inception_4c_pool_proj'))
+
+        (self.feed('inception_4c_1x1',
+                   'inception_4c_3x3',
+                   'inception_4c_5x5',
+                   'inception_4c_pool_proj')
+         .concat(axis=1, name='inception_4c_output')
+         .conv2d(1, 1, 112, 1, 1, name='inception_4d_1x1'))
+
+        (self.feed('inception_4c_output')
+         .conv2d(1, 1, 144, 1, 1, name='inception_4d_3x3_reduce')
+         .conv2d(3, 3, 288, 1, 1, padding=(1, 1), name='inception_4d_3x3'))
+
+        (self.feed('inception_4c_output')
+         .conv2d(1, 1, 32, 1, 1, name='inception_4d_5x5_reduce')
+         .conv2d(5, 5, 64, 1, 1, padding=(2, 2), name='inception_4d_5x5'))
+
+        (self.feed('inception_4c_output')
+         .max_pool(3, 3, 1, 1, padding=(1, 1), name='inception_4d_pool')
+         .conv2d(1, 1, 64, 1, 1, name='inception_4d_pool_proj'))
+
+        (self.feed('inception_4d_1x1',
+                   'inception_4d_3x3',
+                   'inception_4d_5x5',
+                   'inception_4d_pool_proj')
+         .concat(axis=1, name='inception_4d_output')
+         .conv2d(1, 1, 256, 1, 1, name='inception_4e_1x1'))
+
+        (self.feed('inception_4d_output')
+         .conv2d(1, 1, 160, 1, 1, name='inception_4e_3x3_reduce')
+         .conv2d(3, 3, 320, 1, 1, padding=(1, 1), name='inception_4e_3x3'))
+
+        (self.feed('inception_4d_output')
+         .conv2d(1, 1, 32, 1, 1, name='inception_4e_5x5_reduce')
+         .conv2d(5, 5, 128, 1, 1, padding=(2, 2), name='inception_4e_5x5'))
+
+        (self.feed('inception_4d_output')
+         .max_pool(3, 3, 1, 1, padding=(1, 1), name='inception_4e_pool')
+         .conv2d(1, 1, 128, 1, 1, name='inception_4e_pool_proj'))
+
+        (self.feed('inception_4e_1x1',
+                   'inception_4e_3x3',
+                   'inception_4e_5x5',
+                   'inception_4e_pool_proj')
+         .concat(axis=1, name='inception_4e_output')
+         .max_pool(3, 3, 2, 2, padding=(1, 1), name='pool4_3x3_s2')
+         .conv2d(1, 1, 256, 1, 1, name='inception_5a_1x1'))
+
+        (self.feed('pool4_3x3_s2')
+         .conv2d(1, 1, 160, 1, 1, name='inception_5a_3x3_reduce')
+         .conv2d(3, 3, 320, 1, 1, padding=(1, 1), name='inception_5a_3x3'))
+
+        (self.feed('pool4_3x3_s2')
+         .conv2d(1, 1, 32, 1, 1, name='inception_5a_5x5_reduce')
+         .conv2d(5, 5, 128, 1, 1, padding=(2, 2), name='inception_5a_5x5'))
+
+        (self.feed('pool4_3x3_s2')
+         .max_pool(3, 3, 1, 1, padding=(1, 1), name='inception_5a_pool')
+         .conv2d(1, 1, 128, 1, 1, name='inception_5a_pool_proj'))
+
+        (self.feed('inception_5a_1x1',
+                   'inception_5a_3x3',
+                   'inception_5a_5x5',
+                   'inception_5a_pool_proj')
+         .concat(axis=1, name='inception_5a_output')
+         .conv2d(1, 1, 384, 1, 1, name='inception_5b_1x1'))
+
+        (self.feed('inception_5a_output')
+         .conv2d(1, 1, 192, 1, 1, name='inception_5b_3x3_reduce')
+         .conv2d(3, 3, 384, 1, 1, padding=(1, 1), name='inception_5b_3x3'))
+
+        (self.feed('inception_5a_output')
+         .conv2d(1, 1, 48, 1, 1, name='inception_5b_5x5_reduce')
+         .conv2d(5, 5, 128, 1, 1, padding=(2, 2), name='inception_5b_5x5'))
+
+        (self.feed('inception_5a_output')
+         .max_pool(3, 3, 1, 1, name='inception_5b_pool')
+         .conv2d(1, 1, 128, 1, 1, name='inception_5b_pool_proj'))
+
+        (self.feed('inception_5b_1x1',
+                   'inception_5b_3x3',
+                   'inception_5b_5x5',
+                   'inception_5b_pool_proj')
+         .concat(axis=1, name='inception_5b_output')
+         .avg_pool(7, 7, 1, 1, padding='VALID', name='pool5_7x7_s1')
+         .fc(out_num=cfg.num_classes, name="fc")
+         .softmax(name="softmax"))
+

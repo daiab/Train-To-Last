@@ -46,9 +46,9 @@ def get_lr_scheduler(kv):
 
 def fit(network, data_loader, **kwargs):
     # kvstore
-    logging.info("build dist start")
+    print("build dist start")
     kv = mx.kvstore.create(cfg.kv_store)
-    logging.info("build dist over")
+    print("build dist over")
     # logging
     head = '%(asctime)-15s Node[' + str(kv.rank) + '] %(message)s'
     logging.basicConfig(level=logging.DEBUG, format=head)
