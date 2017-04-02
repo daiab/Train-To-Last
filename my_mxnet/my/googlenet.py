@@ -31,7 +31,7 @@ def InceptionFactory(data, num_1x1, num_3x3red, num_3x3, num_d5x5red, num_d5x5, 
 
 def get_symbol(num_classes = 10575):
     data = mx.sym.Variable("data")
-    conv1 = ConvFactory(data, 64, kernel=(7, 7), stride=(2,2), pad=(3, 3), name="conv1")
+    conv1 = ConvFactory(data, 64, kernel=(7, 7), stride=(2 ,2), pad=(3, 3), name="conv1")
     pool1 = mx.sym.Pooling(conv1, kernel=(3, 3), stride=(2, 2), pool_type="max")
     conv2 = ConvFactory(pool1, 64, kernel=(1, 1), stride=(1,1), name="conv2")
     conv3 = ConvFactory(conv2, 192, kernel=(3, 3), stride=(1, 1), pad=(1,1), name="conv3")
