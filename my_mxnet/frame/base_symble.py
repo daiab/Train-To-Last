@@ -137,4 +137,5 @@ class BaseSymble(object):
 
     @layer
     def softmax(self, inputs, name="softmax"):
-        return mx.symbol.SoftmaxOutput(data=inputs, name='softmax-' + name)
+        softmax = mx.symbol.SoftmaxOutput(data=inputs, name='softmax-' + name)
+        return softmax
