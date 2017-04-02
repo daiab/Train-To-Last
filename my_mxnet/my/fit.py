@@ -103,7 +103,7 @@ def fit(network, data_loader, **kwargs):
             'wd' : cfg.wd,
             'lr_scheduler': lr_scheduler}
 
-    monitor = mx.mon.Monitor(cfg.monitor, pattern=".*weight|.*output|lr*") if cfg.monitor > 0 else None
+    monitor = mx.mon.Monitor(cfg.monitor, pattern=".*weight|lr.*|.*lr") if cfg.monitor > 0 else None
 
     if cfg.init_xavier:
         logging.info("init with xavier")
