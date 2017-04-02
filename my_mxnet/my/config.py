@@ -1,7 +1,7 @@
 # load the model on an epoch using the model-load-prefix
-load_epoch=None
+load_epoch=0
 # model prefix
-model_prefix="log/train/model-"
+model_prefix="log/train/model"
 # train record data path
 data_train="/home/mpiNode/data/img.rec"
 # the validation data
@@ -11,7 +11,7 @@ lr=0.05
 # the ratio to reduce lr on each step
 lr_factor=0.5
 # the batch size
-batch_size=440
+batch_size=460
 # key-value store type
 kv_store="local" #"dist"
 # the epochs to reduce the lr, e.g. 30,60
