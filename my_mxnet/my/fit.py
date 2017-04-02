@@ -9,6 +9,7 @@ def load_model(rank=0):
     if cfg.load_epoch is None:
         return (None, None, None)
     assert cfg.model_prefix is not None
+    print("========  load model ========")
     model_prefix = cfg.model_prefix
     if rank > 0 and os.path.exists("%s-%d-symbol.json" % (model_prefix, rank)):
         model_prefix += "-%d" % (rank)
@@ -45,10 +46,9 @@ def get_lr_scheduler(kv):
 
 def fit(network, data_loader, **kwargs):
     # kvstore
-    print("build dist start")
+    logging.info("build dist start")
     kv = mx.kvstore.create(cfg.kv_store)
-    print("build dist over")
-
+    logging.info("build dist over")
     # logging
     head = '%(asctime)-15s Node[' + str(kv.rank) + '] %(message)s'
     logging.basicConfig(level=logging.DEBUG, format=head)
@@ -67,7 +67,6 @@ def fit(network, data_loader, **kwargs):
                 logging.info('Batch [%d]\tSpeed: %.2f samples/sec' % (
                     i, cfg.disp_batches*cfg.batch_size/(time.time()-tic)))
                 tic = time.time()
-
         return
 
 
@@ -77,7 +76,6 @@ def fit(network, data_loader, **kwargs):
         aux_params = kwargs['aux_params']
     else:
         sym, arg_params, aux_params = load_model(kv.rank)
-        print("load model ========  ")
         if sym is not None:
             assert sym.tojson() == network.tojson()
 
@@ -92,18 +90,15 @@ def fit(network, data_loader, **kwargs):
     lr, lr_scheduler = get_lr_scheduler(kv)
 
     # create model
-    model = mx.mod.Module(
-        context       = devs,
-        symbol        = network
-    )
+    model = mx.mod.Module(context=devs, symbol=network)
 
     optimizer_params = {
             'learning_rate': lr,
-            'momentum' : cfg.mom,
-            'wd' : cfg.wd,
+            'momentum': cfg.mom,
+            'wd': cfg.wd,
             'lr_scheduler': lr_scheduler}
 
-    monitor = mx.mon.Monitor(cfg.monitor, pattern=".*weight|lr.*|.*lr") if cfg.monitor > 0 else None
+    monitor = mx.mon.Monitor(cfg.monitor, pattern=".*weight|learning_rate|softmax_label") if cfg.monitor > 0 else None
 
     if cfg.init_xavier:
         logging.info("init with xavier")

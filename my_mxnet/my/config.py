@@ -55,5 +55,5 @@ rgb_mean=[255, 255, 255]
 random_crop=1
 max_random_l=0
 random_mirror=1
-data_nthreads=4
+data_nthreads=8
 
