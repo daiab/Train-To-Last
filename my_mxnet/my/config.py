@@ -1,5 +1,5 @@
 # load the model on an epoch using the model-load-prefix
-load_epoch=0
+load_epoch=None
 # model prefix
 model_prefix="log/train/model"
 # train record data path
