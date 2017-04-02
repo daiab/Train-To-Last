@@ -103,12 +103,14 @@ def fit(network, data_loader, **kwargs):
             'wd' : cfg.wd,
             'lr_scheduler': lr_scheduler}
 
-    monitor = mx.mon.Monitor(cfg.monitor, pattern=".*") if cfg.monitor > 0 else None
+    monitor = mx.mon.Monitor(cfg.monitor, pattern=".*weight|.*output|lr*") if cfg.monitor > 0 else None
 
     if cfg.network:
         # AlexNet will not converge using Xavier
+        logging.info("init with normal")
         initializer = mx.init.Normal()
     else:
+        logging.info("init with xavier")
         initializer = mx.init.Xavier(rnd_type='gaussian', factor_type="in", magnitude=2)
     # initializer   = mx.init.Xavier(factor_type="in", magnitude=2.34),
 

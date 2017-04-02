@@ -5,3 +5,6 @@ from my_mxnet.my import fit
 
 sym = net.get_symbol()
 fit.fit(sym, data.get_rec_iter)
+
+
+# export DMLC_ROLE=worker; export DMLC_NUM_SERVER=4 ;python my_mxnet/my/train.py

@@ -11,7 +11,7 @@ lr=0.05
 # the ratio to reduce lr on each step
 lr_factor=0.5
 # the batch size
-batch_size=280
+batch_size=440
 # key-value store type
 kv_store="local" #"dist"
 # the epochs to reduce the lr, e.g. 30,60
@@ -19,7 +19,7 @@ lr_step_epochs=(10000, 20000, 40000)
 # 1 means test reading speed without training
 test_io=False
 # show progress for every n batches
-disp_batches=40
+disp_batches=55
 # list of gpus to run, e.g. 0 or 0,2,5. empty means using cpu
 gpus="0,1,2,3"
 # momentum  for sgd
@@ -31,7 +31,7 @@ monitor=100
 #the neural network to use
 network="googlenet"
 # report the top-k accuracy. 0 means no report.
-top_k=4
+top_k=0
 # the optimizer type default='sgd'
 optimizer='sgd'
 # max num of epochs
