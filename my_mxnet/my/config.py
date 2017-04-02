@@ -1,5 +1,5 @@
 # load the model on an epoch using the model-load-prefix
-load_epoch=0
+load_epoch=None
 # model prefix
 model_prefix="log/train/model-"
 # train record data path
@@ -17,7 +17,7 @@ kv_store="local" #"dist"
 # the epochs to reduce the lr, e.g. 30,60
 lr_step_epochs=(10000, 20000, 40000)
 # 1 means test reading speed without training
-test_io=True
+test_io=False
 # show progress for every n batches
 disp_batches=40
 # list of gpus to run, e.g. 0 or 0,2,5. empty means using cpu
