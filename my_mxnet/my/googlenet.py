@@ -5,7 +5,7 @@ import my_mxnet.my.config as cfg
 class Symble(BaseSymble):
     def def_model(self):
         (self.feed('data')
-         .conv2d(7, 7, 64, 2, 2, padding=(2, 2), name='conv1_7x7_s2')
+         .conv2d(7, 7, 64, 2, 2, padding=(3, 3), name='conv1_7x7_s2')
          .max_pool(3, 3, 2, 2, padding=(1, 1), name='pool1_3x3_s2')
          # .lrn(2, 2e-05, 0.75, name='pool1_norm1')
          .conv2d(1, 1, 64, 1, 1, name='conv2_3x3_reduce')

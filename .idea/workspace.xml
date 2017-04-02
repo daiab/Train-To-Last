@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cf3325f-e36b-4299-86e0-83ffa1a61289" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_mxnet/frame/base_symble.py" afterPath="$PROJECT_DIR$/my_mxnet/frame/base_symble.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_mxnet/my/googlenet.py" afterPath="$PROJECT_DIR$/my_mxnet/my/googlenet.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_mxnet/my/train.py" afterPath="$PROJECT_DIR$/my_mxnet/my/train.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,7 +52,7 @@
         <entry file="file://$PROJECT_DIR$/my_mxnet/my/googlenet.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="713">
-              <caret line="189" column="14" lean-forward="true" selection-start-line="189" selection-start-column="14" selection-end-line="189" selection-end-column="14" />
+              <caret line="189" column="31" lean-forward="false" selection-start-line="189" selection-start-column="24" selection-end-line="189" selection-end-column="31" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -59,21 +60,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base_symble.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/my_mxnet/frame/base_symble.py">
+      <file leaf-file-name="googlenet.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/image/symbols/googlenet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="745">
-              <caret line="140" column="22" lean-forward="false" selection-start-line="140" selection-start-column="22" selection-end-line="140" selection-end-column="22" />
+            <state relative-caret-position="667">
+              <caret line="48" column="60" lean-forward="true" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="60" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="train.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="base_symble.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my_mxnet/frame/base_symble.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1895">
+              <caret line="118" column="25" lean-forward="false" selection-start-line="118" selection-start-column="25" selection-end-line="118" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="train.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/my_mxnet/my/train.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="161">
-              <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+              <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
               <folding>
                 <element signature="e#38#73#0" expanded="true" />
               </folding>
@@ -117,8 +128,8 @@
       <find>Concat</find>
       <find>inception_3a_output</find>
       <find>pool5_7x7_s1</find>
-      <find>paddin</find>
       <find>batch_norm</find>
+      <find>paddin</find>
       <find>padding=</find>
     </findStrings>
     <replaceStrings>
@@ -153,10 +164,10 @@
         <option value="$PROJECT_DIR$/my_mxnet/my/vgg.py" />
         <option value="$PROJECT_DIR$/my_mxnet/my/config.py" />
         <option value="$PROJECT_DIR$/my_mxnet/my/fit.py" />
-        <option value="$PROJECT_DIR$/my_mxnet/my/train.py" />
         <option value="$PROJECT_DIR$/release/googlenet/main/net.py" />
-        <option value="$PROJECT_DIR$/my_mxnet/my/googlenet.py" />
         <option value="$PROJECT_DIR$/my_mxnet/frame/base_symble.py" />
+        <option value="$PROJECT_DIR$/my_mxnet/my/googlenet.py" />
+        <option value="$PROJECT_DIR$/my_mxnet/my/train.py" />
       </list>
     </option>
   </component>
@@ -290,6 +301,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="my" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="image" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="image" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="symbols" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -837,6 +880,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/my_mxnet/my/fit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-305">
+          <caret line="91" column="18" lean-forward="true" selection-start-line="91" selection-start-column="18" selection-end-line="91" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_mxnet/frame/base_symble.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1895">
+          <caret line="118" column="25" lean-forward="false" selection-start-line="118" selection-start-column="25" selection-end-line="118" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/anaconda3/lib/python3.5/site-packages/tensorflow/python/ops/gen_nn_ops.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
@@ -853,14 +914,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/image/symbols/googlenet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="29" column="57" lean-forward="false" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/release/googlenet/main/net.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
@@ -869,41 +922,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my_mxnet/my/train.py">
+    <entry file="file://$PROJECT_DIR$/image/symbols/googlenet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-          <folding>
-            <element signature="e#38#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my_mxnet/my/fit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-305">
-          <caret line="91" column="18" lean-forward="true" selection-start-line="91" selection-start-column="18" selection-end-line="91" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="667">
+          <caret line="48" column="60" lean-forward="true" selection-start-line="48" selection-start-column="56" selection-end-line="48" selection-end-column="60" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/my_mxnet/my/googlenet.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="713">
-          <caret line="189" column="14" lean-forward="true" selection-start-line="189" selection-start-column="14" selection-end-line="189" selection-end-column="14" />
+          <caret line="189" column="31" lean-forward="false" selection-start-line="189" selection-start-column="24" selection-end-line="189" selection-end-column="31" />
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my_mxnet/frame/base_symble.py">
+    <entry file="file://$PROJECT_DIR$/my_mxnet/my/train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="745">
-          <caret line="140" column="22" lean-forward="false" selection-start-line="140" selection-start-column="22" selection-end-line="140" selection-end-column="22" />
-          <folding />
+        <state relative-caret-position="161">
+          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+          <folding>
+            <element signature="e#38#73#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
