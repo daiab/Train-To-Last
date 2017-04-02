@@ -5,13 +5,13 @@ model_prefix="log/train/model-"
 # train record data path
 data_train="/home/mpiNode/data/img.rec"
 # the validation data
-data_valid="/home/mpiNode/data/img.rec"
+data_valid=None #"/home/mpiNode/data/img.rec"
 # initial learning rate
 lr=0.05
 # the ratio to reduce lr on each step
 lr_factor=0.5
 # the batch size
-batch_size=896
+batch_size=500
 # key-value store type
 kv_store="local" #"dist"
 # the epochs to reduce the lr, e.g. 30,60
