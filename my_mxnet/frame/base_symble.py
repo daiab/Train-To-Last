@@ -116,8 +116,8 @@ class BaseSymble(object):
     @layer
     def avg_pool(self,
                  input,
-                 kenerl_h,
-                 kenerl_w,
+                 kernel_h,
+                 kernel_w,
                  stride_h,
                  stride_w,
                  padding=(0, 0),

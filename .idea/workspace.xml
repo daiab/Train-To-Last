@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cf3325f-e36b-4299-86e0-83ffa1a61289" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_mxnet/frame/base_symble.py" afterPath="$PROJECT_DIR$/my_mxnet/frame/base_symble.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,8 +50,8 @@
       <file leaf-file-name="googlenet.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my_mxnet/my/googlenet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="32" column="13" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+            <state relative-caret-position="667">
+              <caret line="187" column="12" lean-forward="true" selection-start-line="187" selection-start-column="12" selection-end-line="187" selection-end-column="12" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -63,8 +62,8 @@
       <file leaf-file-name="base_symble.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/my_mxnet/frame/base_symble.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
-              <caret line="130" column="67" lean-forward="false" selection-start-line="130" selection-start-column="67" selection-end-line="130" selection-end-column="67" />
+            <state relative-caret-position="345">
+              <caret line="118" column="25" lean-forward="false" selection-start-line="118" selection-start-column="17" selection-end-line="118" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -106,6 +105,7 @@
       <find>Concat</find>
       <find>inception_3a_output</find>
       <find>batch_norm</find>
+      <find>pool5_7x7_s1</find>
     </findStrings>
     <replaceStrings>
       <replace>axis=1</replace>
@@ -891,16 +891,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my_mxnet/my/googlenet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="32" column="13" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/image/symbols/googlenet.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -909,10 +899,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/my_mxnet/my/googlenet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="187" column="12" lean-forward="true" selection-start-line="187" selection-start-column="12" selection-end-line="187" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/my_mxnet/frame/base_symble.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="130" column="67" lean-forward="false" selection-start-line="130" selection-start-column="67" selection-end-line="130" selection-end-column="67" />
+        <state relative-caret-position="345">
+          <caret line="118" column="25" lean-forward="false" selection-start-line="118" selection-start-column="17" selection-end-line="118" selection-end-column="25" />
           <folding />
         </state>
       </provider>
