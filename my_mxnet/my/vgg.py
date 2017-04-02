@@ -5,7 +5,7 @@ large-scale image recognition." arXiv preprint arXiv:1409.1556 (2014).
 """
 import mxnet as mx
 
-def get_symbol(num_classes, **kwargs):
+def get_symbol(num_classes=10575):
     ## define alexnet
     data = mx.symbol.Variable(name="data")
     # group 1
