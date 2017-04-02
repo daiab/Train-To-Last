@@ -105,7 +105,7 @@ def fit(network, data_loader, **kwargs):
 
     monitor = mx.mon.Monitor(cfg.monitor, pattern=".*") if cfg.monitor > 0 else None
 
-    if cfg.network == 'googlenet':
+    if cfg.network:
         # AlexNet will not converge using Xavier
         initializer = mx.init.Normal()
     else:
