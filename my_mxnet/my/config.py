@@ -29,7 +29,7 @@ wd=0.0001
 # log network parameters every N iters if larger than 0
 monitor=100
 #the neural network to use
-network="googlenet"
+init_xavier=True
 # report the top-k accuracy. 0 means no report.
 top_k=0
 # the optimizer type default='sgd'
