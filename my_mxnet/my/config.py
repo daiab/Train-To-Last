@@ -3,39 +3,41 @@ load_epoch=0
 # model prefix
 model_prefix="log/train/model-"
 # train record data path
-data_train=""
+data_train="/home/mpiNode/data/img.rec"
+# the validation data
+data_valid="/home/mpiNode/data/img.rec"
 # initial learning rate
-lr=0
+lr=0.05
 # the ratio to reduce lr on each step
 lr_factor=0.5
 # the batch size
-batch_size=0
+batch_size=224
 # key-value store type
 kv_store="dist"
 # the epochs to reduce the lr, e.g. 30,60
-lr_step_epochs=(30, 60, 90)
+lr_step_epochs=(10000, 20000, 40000)
 # 1 means test reading speed without training
-test_io=0
+test_io=True
 # show progress for every n batches
 disp_batches=40
 # list of gpus to run, e.g. 0 or 0,2,5. empty means using cpu
 gpus=0,1,2,3
 # momentum  for sgd
-mom=0
+mom=0.9
 # weight decay for sgd
-wd=0
+wd=0.0001
 # log network parameters every N iters if larger than 0
 monitor=0
 #the neural network to use
-network=0
+network="googlenet"
 # report the top-k accuracy. 0 means no report.
-top_k=0
+top_k=1
 # the optimizer type default='sgd'
-optimizer=0
+optimizer='sgd'
 # max num of epochs
-num_epochs=0
+num_epochs=40
 # number workers
-num_workers = 1
+num_workers = 4
 
 
 # read_data
@@ -48,7 +50,7 @@ num_examples=0
 # the image shape feed into the network
 image_shape=(3,224,224)
 # a tuple of size 3 for the mean rgb
-rgb_mean=123.68,116.779,103.939
+rgb_mean=[255, 255, 255]
 # if or not randomly crop the image
 random_crop=1
 # max ratio to scale
@@ -69,6 +71,5 @@ max_random_rotate_angle=0
 max_random_shear_ratio=0
 # if or not randomly flip horizontally
 random_mirror=0
-data_nthreads=0
-# the validation data
-data_val=0
+data_nthreads=4
+

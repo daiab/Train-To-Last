@@ -2,7 +2,7 @@ import mxnet as mx
 import logging
 import time
 import os
-import my.config as cfg
+import my_mxnet.my.config as cfg
 
 
 def load_model(rank=0):
@@ -100,7 +100,7 @@ def fit(network, data_loader, **kwargs):
 
     monitor = mx.mon.Monitor(cfg.monitor, pattern=".*") if cfg.monitor > 0 else None
 
-    if cfg.network == 'alexnet':
+    if cfg.network == 'googlenet':
         # AlexNet will not converge using Xavier
         initializer = mx.init.Normal()
     else:
