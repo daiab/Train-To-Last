@@ -51,9 +51,9 @@ def fit(network, data_loader, **kwargs):
 
     # logging
     head = '%(asctime)-15s Node[' + str(kv.rank) + '] %(message)s'
-    logging.basicConfig(level=logging.DEBUG, format=head,
-                        filename='/home/mpiNode/daiab/git/model/log/runtime/mxnet.log',
-                        filemode='w')
+    logging.basicConfig(level=logging.DEBUG, format=head)
+                        #filename='/home/mpiNode/daiab/git/model/log/runtime/mxnet.log',
+                        #filemode='w')
     logging.info('start with arguments %s', cfg)
 
     # data iterators

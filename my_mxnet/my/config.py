@@ -11,7 +11,7 @@ lr=0.05
 # the ratio to reduce lr on each step
 lr_factor=0.5
 # the batch size
-batch_size=460
+batch_size=440
 # key-value store type
 kv_store="local" #"dist"
 # the epochs to reduce the lr, e.g. 30,60
