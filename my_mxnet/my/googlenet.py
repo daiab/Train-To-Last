@@ -185,7 +185,7 @@ class Symble(BaseSymble):
                    'inception_5b_5x5',
                    'inception_5b_pool_proj')
          .concat(axis=1, name='inception_5b_output')
-         .avg_pool(7, 7, 1, 1, padding='VALID', name='pool5_7x7_s1')
+         .avg_pool(7, 7, 1, 1, name='pool5_7x7_s1')
          .fc(out_num=cfg.num_classes, name="fc")
          .softmax(name="softmax"))
 

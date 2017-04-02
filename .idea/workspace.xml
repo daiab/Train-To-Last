@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7cf3325f-e36b-4299-86e0-83ffa1a61289" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_mxnet/frame/base_symble.py" afterPath="$PROJECT_DIR$/my_mxnet/frame/base_symble.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_mxnet/my/googlenet.py" afterPath="$PROJECT_DIR$/my_mxnet/my/googlenet.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,8 +20,8 @@
       <file leaf-file-name="net.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/release/googlenet/main/net.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+            <state relative-caret-position="506">
+              <caret line="187" column="37" lean-forward="false" selection-start-line="187" selection-start-column="31" selection-end-line="187" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -47,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="googlenet.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="googlenet.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/my_mxnet/my/googlenet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="667">
-              <caret line="187" column="12" lean-forward="true" selection-start-line="187" selection-start-column="12" selection-end-line="187" selection-end-column="12" />
+            <state relative-caret-position="-3473">
+              <caret line="7" column="41" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="41" />
               <folding>
                 <element signature="e#0#49#0" expanded="true" />
               </folding>
@@ -59,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base_symble.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="base_symble.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my_mxnet/frame/base_symble.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="118" column="25" lean-forward="false" selection-start-line="118" selection-start-column="17" selection-end-line="118" selection-end-column="25" />
+            <state relative-caret-position="331">
+              <caret line="116" column="13" lean-forward="false" selection-start-line="116" selection-start-column="13" selection-end-line="116" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -104,8 +104,9 @@
       <find>inception_3a_pool_proj</find>
       <find>Concat</find>
       <find>inception_3a_output</find>
-      <find>batch_norm</find>
       <find>pool5_7x7_s1</find>
+      <find>batch_norm</find>
+      <find>paddin</find>
     </findStrings>
     <replaceStrings>
       <replace>axis=1</replace>
@@ -139,9 +140,10 @@
         <option value="$PROJECT_DIR$/my_mxnet/my/vgg.py" />
         <option value="$PROJECT_DIR$/my_mxnet/my/config.py" />
         <option value="$PROJECT_DIR$/my_mxnet/my/fit.py" />
-        <option value="$PROJECT_DIR$/my_mxnet/my/googlenet.py" />
         <option value="$PROJECT_DIR$/my_mxnet/my/train.py" />
         <option value="$PROJECT_DIR$/my_mxnet/frame/base_symble.py" />
+        <option value="$PROJECT_DIR$/release/googlenet/main/net.py" />
+        <option value="$PROJECT_DIR$/my_mxnet/my/googlenet.py" />
       </list>
     </option>
   </component>
@@ -839,14 +841,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/release/googlenet/main/net.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/my_mxnet/my/vgg.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -899,21 +893,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my_mxnet/my/googlenet.py">
+    <entry file="file://$PROJECT_DIR$/my_mxnet/frame/base_symble.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="187" column="12" lean-forward="true" selection-start-line="187" selection-start-column="12" selection-end-line="187" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="331">
+          <caret line="116" column="13" lean-forward="false" selection-start-line="116" selection-start-column="13" selection-end-line="116" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my_mxnet/frame/base_symble.py">
+    <entry file="file://$PROJECT_DIR$/release/googlenet/main/net.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="118" column="25" lean-forward="false" selection-start-line="118" selection-start-column="17" selection-end-line="118" selection-end-column="25" />
+        <state relative-caret-position="506">
+          <caret line="187" column="37" lean-forward="false" selection-start-line="187" selection-start-column="31" selection-end-line="187" selection-end-column="37" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_mxnet/my/googlenet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3473">
+          <caret line="7" column="41" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
