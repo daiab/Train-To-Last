@@ -68,8 +68,8 @@ class BaseSymble(object):
             inf_shape = input.infer_shape(data=self.input_shape)[1][0][0]
             tmp = inf_shape % stride_w
             pad = kernel_w - tmp
-            pad_left = int(pad / 2)
-            pad_right = pad - pad_left
+            pad_right = pad_left = int(pad / 2)
+            # pad_right = pad - pad_left
         else:
             pad_left = pad_right = 0
         print("pad_left = %d, pad_right = %d" %(pad_left, pad_right))
@@ -120,7 +120,8 @@ class BaseSymble(object):
             tmp = inf_shape % stride_w
             pad = kernel_w - tmp
             pad_left = int(pad / 2)
-            pad_right = pad - pad_left
+            pad_right = pad_left = int(pad / 2)
+            # pad_right = pad - pad_left
         else:
             pad_left = pad_right = 0
         return mx.symbol.Pooling(data=input, pool_type='max', kernel=(kernel_h, kernel_w),
@@ -140,7 +141,8 @@ class BaseSymble(object):
             tmp = inf_shape % stride_w
             pad = kernel_w - tmp
             pad_left = int(pad / 2)
-            pad_right = pad - pad_left
+            pad_right = pad_left = int(pad / 2)
+            # pad_right = pad - pad_left
         else:
             pad_left = pad_right = 0
         return mx.symbol.Pooling(data=input, pool_type='avg', kernel=(kernel_h, kernel_w),
