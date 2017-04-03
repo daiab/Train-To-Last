@@ -13,7 +13,7 @@ def layer(op):
             layer_value = [self.layer[key] for key in self.top]
         print("---------layer info-----------")
         print(name)
-        print(layer_value)
+        print(layer_value.infer_shape(data=self.input_shape))
         # print(layer_value)
         layer_output = op(self, layer_value, *args, **kwargs)
         self.layer[name] = layer_output
@@ -24,13 +24,14 @@ def layer(op):
 
 
 class BaseSymble(object):
-    def __init__(self, input=None):
+    def __init__(self, input=None, input_shape=None):
         """
         input: like {'input_layer_name': input_layer_value}
         layer: like {'layer_name': layer_value}
         top: like ['layer_name_1', 'layer_name_2', ...]
         """
         self.layer = input
+        self.input_shape = input_shape
         self.top = []
         self.register = []
         self.def_model()

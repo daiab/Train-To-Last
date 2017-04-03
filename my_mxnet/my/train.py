@@ -4,7 +4,7 @@ import my_mxnet.my.read_data as data
 from my_mxnet.my import fit
 import mxnet as mx
 
-sym = net.Symble({"data": mx.symbol.Variable(name="data")})
+sym = net.Symble(input={"data": mx.symbol.Variable(name="data")}, input_shape=(110, 3, 224, 224))
 fit.fit(sym.layer['softmax'], data.get_rec_iter)
 
 
