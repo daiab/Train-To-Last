@@ -48,9 +48,6 @@ class BaseSymble(object):
             self.top.append(fed_name)
         return self
 
-    def batch_norm(self, inputs, decay=0.99, epsilon=1e-7, name="batch_norm"):
-        return mx.symbol.BatchNorm(data=inputs, eps=epsilon, momentum=decay, name="batch_norm-" + name)
-
     @layer
     def conv2d(self,
                input,
@@ -60,7 +57,7 @@ class BaseSymble(object):
                stride_h,
                stride_w,
                padding='SAME',
-               bn=False,
+               bn=True,
                relu=True,
                bias=True,
                name='conv2d'):
@@ -77,9 +74,9 @@ class BaseSymble(object):
                                      stride=(stride_h, stride_w), pad=(pad_left, pad_right),
                                      no_bias=not bias, name=name)
         if bn:
-            conv = self.batch_norm(inputs=conv, name=name)
+            conv = mx.symbol.BatchNorm(data=conv, fix_gamma=False, eps=2e-5, momentum=0.99, name="batch_norm-" + name)
         if relu:
-            conv = mx.symbol.Activation(data=conv, act_type='relu', name='activation')
+            conv = mx.symbol.Activation(data=conv, act_type='relu', name='activation-' + name)
         return conv
 
     def lrn(self,
@@ -99,8 +96,8 @@ class BaseSymble(object):
         return mx.symbol.LRN(data=input, nsize=radius, alpha=alpha, beta=beta)
 
     @layer
-    def bn(self, inputs, decay=0.99, epsilon=1e-7, name="batch_norm"):
-        return mx.symbol.BatchNorm(data=inputs, eps=epsilon, momentum=decay, fix_gamma=False)
+    def bn(self, inputs, decay=0.99, epsilon=2e-5, name="batch_norm"):
+        return mx.symbol.BatchNorm(data=inputs, eps=epsilon, momentum=decay, fix_gamma=False, name=name)
 
     @layer
     def relu(self, input, name="relu"):
