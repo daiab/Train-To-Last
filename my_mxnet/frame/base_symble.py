@@ -59,19 +59,22 @@ class BaseSymble(object):
                out_num,
                stride_h,
                stride_w,
-               padding=(0, 0),
+               padding='SAME',
                bn=True,
                relu=True,
                bias=True,
                name='conv2d'):
         if padding == 'SAME':
-            pad_left = int(kernel_w / 2)
-            pad_right = kernel_w - pad_left
+            inf_shape = input.infer_shape(data=self.input_shape)[1][0][0]
+            tmp = inf_shape % stride_w
+            pad = kernel_w - tmp
+            pad_left = int(pad / 2)
+            pad_right = pad - pad_left
         else:
             pad_left = pad_right = 0
         print("pad_left = %d, pad_right = %d" %(pad_left, pad_right))
         conv = mx.symbol.Convolution(data=input, num_filter=out_num, kernel=(kernel_h, kernel_w),
-                                     stride=(stride_h, stride_w), pad=padding,
+                                     stride=(stride_h, stride_w), pad=(pad_left, pad_right),
                                      no_bias=not bias, name=name)
         if bn:
             conv = self.batch_norm(conv)
@@ -110,10 +113,18 @@ class BaseSymble(object):
                  kernel_w,
                  stride_h,
                  stride_w,
-                 padding=(0, 0),
+                 padding='SAME',
                  name="max_pool"):
+        if padding == 'SAME':
+            inf_shape = input.infer_shape(data=self.input_shape)[1][0][0]
+            tmp = inf_shape % stride_w
+            pad = kernel_w - tmp
+            pad_left = int(pad / 2)
+            pad_right = pad - pad_left
+        else:
+            pad_left = pad_right = 0
         return mx.symbol.Pooling(data=input, pool_type='max', kernel=(kernel_h, kernel_w),
-                                 stride=(stride_h, stride_w), pad=padding, name=name)
+                                 stride=(stride_h, stride_w), pad=(pad_left, pad_right), name=name)
 
     @layer
     def avg_pool(self,
@@ -123,10 +134,17 @@ class BaseSymble(object):
                  stride_h,
                  stride_w,
                  padding=(0, 0),
-                 name="avg_pool"):
-        # TODO: this maybe wrong
+                 name='SAME'):
+        if padding == 'SAME':
+            inf_shape = input.infer_shape(data=self.input_shape)[1][0][0]
+            tmp = inf_shape % stride_w
+            pad = kernel_w - tmp
+            pad_left = int(pad / 2)
+            pad_right = pad - pad_left
+        else:
+            pad_left = pad_right = 0
         return mx.symbol.Pooling(data=input, pool_type='avg', kernel=(kernel_h, kernel_w),
-                                 stride=(stride_h, stride_w), pad=padding, name=name)
+                                 stride=(stride_h, stride_w), pad=(pad_left, pad_right), name=name)
 
     @layer
     def concat(self, input, axis=0, name="concat"):
