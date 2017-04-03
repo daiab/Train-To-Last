@@ -60,7 +60,7 @@ class BaseSymble(object):
                stride_h,
                stride_w,
                padding='SAME',
-               bn=True,
+               bn=False,
                relu=True,
                bias=True,
                name='conv2d'):
