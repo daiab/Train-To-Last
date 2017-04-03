@@ -74,6 +74,7 @@ class BaseSymble(object):
                                      stride=(stride_h, stride_w), pad=(pad_left, pad_right),
                                      no_bias=not bias, name=name)
         if bn:
+            print("conv use batch norm")
             conv = mx.symbol.BatchNorm(data=conv, fix_gamma=False, eps=2e-5, momentum=0.99, name="batch_norm-" + name)
         if relu:
             conv = mx.symbol.Activation(data=conv, act_type='relu', name='activation-' + name)
