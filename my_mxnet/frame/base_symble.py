@@ -11,13 +11,13 @@ def layer(op):
             layer_value = self.layer[layer_input_name]
         else:
             layer_value = [self.layer[key] for key in self.top]
-        print("---------layer info-----------")
-        print(name)
-        if isinstance(layer_value, mx.symbol.Symbol):
-            print(layer_value.infer_shape(data=self.input_shape))
         # print(layer_value)
         layer_output = op(self, layer_value, *args, **kwargs)
         self.layer[name] = layer_output
+        print("---------layer info-----------")
+        print(name)
+        if isinstance(layer_output, mx.symbol.Symbol):
+            print(layer_output.infer_shape(data=self.input_shape))
         self.feed(name)
         return self
 
@@ -49,7 +49,7 @@ class BaseSymble(object):
         return self
 
     def batch_norm(self, inputs, decay=0.99, epsilon=1e-7, name="batch_norm"):
-        return mx.symbol.BatchNorm(data=inputs, eps=epsilon, momentum=decay, fix_gamma=False)
+        return mx.symbol.BatchNorm(data=inputs, eps=epsilon, momentum=decay, name="batch_norm-" + name)
 
     @layer
     def conv2d(self,
@@ -77,7 +77,7 @@ class BaseSymble(object):
                                      stride=(stride_h, stride_w), pad=(pad_left, pad_right),
                                      no_bias=not bias, name=name)
         if bn:
-            conv = self.batch_norm(conv)
+            conv = self.batch_norm(inputs=conv, name=name)
         if relu:
             conv = mx.symbol.Activation(data=conv, act_type='relu', name='activation')
         return conv
