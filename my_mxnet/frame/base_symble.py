@@ -13,7 +13,8 @@ def layer(op):
             layer_value = [self.layer[key] for key in self.top]
         print("---------layer info-----------")
         print(name)
-        print(layer_value.infer_shape(data=self.input_shape))
+        if isinstance(layer_value, mx.Symbol):
+            print(layer_value.infer_shape(data=self.input_shape))
         # print(layer_value)
         layer_output = op(self, layer_value, *args, **kwargs)
         self.layer[name] = layer_output
