@@ -11,7 +11,8 @@ import numpy as np
 batch_size = 10
 
 data_iter = mx.io.ImageRecordIter(
-    path_imgrec="/home/daiab/Pictures/test.rec", # the target record file
+    #path_imgrec="/home/daiab/Pictures/test.rec", # the target record file
+    path_imgrec="/home/mpiNode/data/img.rec", # the target record file
     data_shape=(3, 256, 256), # output data shape. An 227x227 region will be cropped from the original image.
     batch_size=batch_size # number of samples per batch
     # resize=256 # resize the shorter edge to 256 before cropping
@@ -31,5 +32,6 @@ if show_image:
         plt.show()
         plt.pause(0.01)
 else:
+    print("one sample shape = ", batch.data[0][0].asnumpy().shape)
     print(batch.label[0].asnumpy())
 

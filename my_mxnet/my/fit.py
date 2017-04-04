@@ -14,7 +14,7 @@ def load_model(rank=0):
     if rank > 0 and os.path.exists("%s-%d-symbol.json" % (model_prefix, rank)):
         model_prefix += "-%d" % (rank)
     sym, arg_params, aux_params = mx.model.load_checkpoint(model_prefix, cfg.load_epoch)
-    logging.info('Loaded model %s_%04d.params', model_prefix, cfg.load_epoch)
+    logging.info('Loaded model ========= %s_%04d.params', model_prefix, cfg.load_epoch)
     return (sym, arg_params, aux_params)
 
 def save_model(rank=0):
