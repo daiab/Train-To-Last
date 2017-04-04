@@ -7,7 +7,7 @@ data_train="/home/mpiNode/data/img.rec"
 # the validation data
 data_valid=None #"/home/mpiNode/data/img.rec"
 # initial learning rate
-lr=0.1
+lr=0.05
 pow=0.5
 end_lr=0.0001
 decay_steps=1000
