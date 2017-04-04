@@ -48,9 +48,10 @@ sgd_opt = mx.optimizer.SGD(learning_rate=cfg.lr, momentum=cfg.mom, wd=cfg.wd, re
 def lr_callback(param):
     # print("param==================")
     # print(param)
-    sgd_opt.lr = (1 - param.nbatch / cfg.decay_steps) ** cfg.pow * (cfg.lr - cfg.end_lr) + cfg.end_lr
+    global_step = param.epoch * int(cfg.num_examples / cfg.batch_size) + param.nbatch
+    sgd_opt.lr = (1 - global_step / cfg.decay_steps) ** cfg.pow * (cfg.lr - cfg.end_lr) + cfg.end_lr
     if param.nbatch % cfg.disp_batches == 0:
-        logging.info('epoch [%d] Batch [%d], learning rate:%f' % (param.epoch, param.nbatch, sgd_opt.lr))
+        logging.info('Epoch[%d] Batch [%d]	learning rate:%f' % (param.epoch, param.nbatch, sgd_opt.lr))
 
 def fit(network, data_loader, **kwargs):
     # kvstore

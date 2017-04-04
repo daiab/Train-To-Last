@@ -49,7 +49,7 @@ pad_size=0
 # the number of classes
 num_classes=10575
 # the number of training examples
-num_examples=390000
+num_examples=469216
 # the image shape feed into the network
 image_shape=(3, 224, 224)
 # a tuple of size 3 for the mean rgb
