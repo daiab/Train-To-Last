@@ -15,7 +15,7 @@ batch_size=800
 # key-value store type
 kv_store="local" #"dist"
 # the epochs to reduce the lr, e.g. 30,60
-lr_step_epochs=(3, 6, 12)
+lr_step_epochs=(1, 2, 3)
 # 1 means test reading speed without training
 test_io=False
 # show progress for every n batches
