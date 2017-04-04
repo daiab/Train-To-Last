@@ -44,6 +44,7 @@ def get_lr_scheduler(kv):
     steps = [epoch_size * (x - begin_epoch) for x in cfg.lr_step_epochs if x - begin_epoch > 0]
     return (lr, mx.lr_scheduler.MultiFactorScheduler(step=steps, factor=cfg.lr_factor))
 
+#TODO: rescale_grad?
 sgd_opt = mx.optimizer.SGD(learning_rate=cfg.lr, momentum=cfg.mom, wd=cfg.wd, rescale_grad=1/cfg.batch_size)
 def lr_callback(param):
     # print("param==================")

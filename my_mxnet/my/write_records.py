@@ -60,7 +60,7 @@ def make_list(args):
         random.shuffle(image_list)
     N = len(image_list)
     chunk_size = (N + args.chunks - 1) / args.chunks
-    for i in xrange(args.chunks):
+    for i in range(args.chunks):
         chunk = image_list[i * chunk_size:(i + 1) * chunk_size]
         if args.chunks > 1:
             str_chunk = '_%d' % i
@@ -78,6 +78,7 @@ def make_list(args):
             write_list(args.prefix + str_chunk + '_train.lst', chunk[sep_test:sep_test + sep])
 
 def read_list(path_in):
+    item_list=[]
     with open(path_in) as fin:
         idx = 0
         while True:
@@ -89,14 +90,18 @@ def read_list(path_in):
             if line_len < 2:
                 print('lst should at least has three parts, but only has %s parts for %s' %(line_len, line))
                 continue
+            # index, label, name
             line = [idx, line[1], line[0]]
             try:
                 item = [int(line[0])] + [line[-1]] + [float(i) for i in line[1:-1]]
+                item_list.append(item)
+                idx += 1
             except Exception as e:
                 print('Parsing lst met error for %s, detail: %s' %(line, e))
                 continue
-            idx += 1
-            yield item
+            # yield item
+    random.shuffle(item_list)
+    return item_list
 
 def image_encode(args, i, item, q_out):
     fullpath = os.path.join(args.root, item[1])
@@ -144,7 +149,7 @@ def image_encode(args, i, item, q_out):
         img = cv2.resize(img, newsize)
 
     try:
-        s = mx.recordio.pack_img(header, img, quality=args.quality, img_fmt=args.encoding)
+        s = mx.recordio.pack_img(header, img, quality=100, img_fmt=args.encoding)
         q_out.put((i, s, item))
     except Exception as e:
         traceback.print_exc()
@@ -224,8 +229,6 @@ def parse_args():
         be packed by default.')
     rgroup.add_argument('--center-crop', type=bool, default=False,
                         help='specify whether to crop the center image to make it rectangular.')
-    rgroup.add_argument('--quality', type=int, default=95,
-                        help='JPEG quality for encoding, 1-100; or PNG compression for encoding, 1-9')
     rgroup.add_argument('--num-thread', type=int, default=1,
                         help='number of thread to use for encoding. order of images will be different\
         from the input list if >1. the input list will be modified to match the\

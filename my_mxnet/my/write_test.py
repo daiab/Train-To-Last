@@ -1,4 +1,4 @@
-# python im2rec.py /home/daiab/Pictures image_fold  --exts=.png --train-ratio=1 --test-ratio=0 --shuffle=1 --quality=100
+# python im2rec.py /home/daiab/Pictures image_fold  --exts=.PNG --train-ratio=1 --test-ratio=0
 # /home/daiab/Pictures: the image_fold path
 # image_fold: the fold name of containing image
 # /home/daiab/Pictures path must contain a .lst file which describe the image path and label
