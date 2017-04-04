@@ -5,6 +5,8 @@ load_epoch=None
 model_prefix="log/train/model"
 # train record data path
 data_train="/home/mpiNode/data/img.rec"
+# test record data path
+data_test="/home/mpiNode/data/img_test.rec"
 # the validation data
 data_valid=None #"/home/mpiNode/data/img.rec"
 # initial learning rate
