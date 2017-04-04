@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7cf3325f-e36b-4299-86e0-83ffa1a61289" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_mxnet/my/config.py" afterPath="$PROJECT_DIR$/my_mxnet/my/config.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/my_mxnet/my/fit.py" afterPath="$PROJECT_DIR$/my_mxnet/my/fit.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -63,8 +62,8 @@
       <file leaf-file-name="config.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/my_mxnet/my/config.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="15" column="14" lean-forward="false" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+            <state relative-caret-position="307">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -876,8 +875,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/my_mxnet/my/config.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="15" column="14" lean-forward="false" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+        <state relative-caret-position="307">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
         </state>
       </provider>

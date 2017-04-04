@@ -9,11 +9,7 @@ data_train="/home/mpiNode/data/img.rec"
 data_test="/home/mpiNode/data/img.rec"
 # the validation data
 data_valid=None #"/home/mpiNode/data/img.rec"
-# initial learning rate
-lr=0.05
-pow=0.5
-end_lr=0.0001
-decay_nbatch=60000
+
 # the ratio to reduce lr on each step
 # lr_factor=0.5
 # the batch size
@@ -38,18 +34,19 @@ monitor=200
 init_xavier=True
 # report the top-k accuracy. 0 means no report.
 # top_k=0
-# max num of epochs
-num_epochs=100
 
 
-
-# read_data
-# padding the input image
-pad_size=0
 # the number of classes
 num_classes=10575
 # the number of training examples
 num_examples=469216
+# max num of epochs
+num_epochs=100
+# initial learning rate
+lr=0.05
+pow=0.5
+end_lr=0.0001
+decay_nbatch=int(num_examples / batch_size) * num_epochs
 # the image shape feed into the network
 image_shape=(3, 224, 224)
 # a tuple of size 3 for the mean rgb
