@@ -46,11 +46,11 @@ def get_lr_scheduler(kv):
 
 sgd_opt = mx.optimizer.SGD(learning_rate=cfg.lr, momentum=cfg.mom, wd=cfg.wd, rescale_grad=1/cfg.batch_size)
 def lr_callback(param):
-    print("param==================")
-    print(param)
+    # print("param==================")
+    # print(param)
     sgd_opt.lr = (1 - param.nbatch / cfg.decay_steps) ** cfg.pow * (cfg.lr - cfg.end_lr) + cfg.end_lr
     if param.nbatch % cfg.disp_batches == 0:
-        logging.info('Batch [%d], learning rate:%f' % (param.nbatch, sgd_opt.lr))
+        logging.info('epoch [%d] Batch [%d], learning rate:%f' % (param.epoch, param.nbatch, sgd_opt.lr))
 
 def fit(network, data_loader, **kwargs):
     # kvstore
