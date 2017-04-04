@@ -26,23 +26,22 @@ def save_model(rank=0):
     return mx.callback.do_checkpoint(cfg.model_prefix if rank == 0 else "%s-%d" % (
         cfg.model_prefix, rank))
 
-def get_lr_scheduler(kv):
-    if cfg.lr_factor is None or cfg.lr_factor >= 1:
-        return (cfg.lr, None)
-    epoch_size = cfg.num_examples / cfg.batch_size
-    if 'dist' in cfg.kv_store:
-        epoch_size /= kv.num_workers
-    begin_epoch = cfg.load_epoch if cfg.load_epoch else 0
-    lr = cfg.lr
-    # TODO
-    for s in cfg.lr_step_epochs:
-        if begin_epoch >= s:
-            lr *= cfg.lr_factor
-    if lr != cfg.lr:
-        logging.info('Adjust learning rate to %e for epoch %d' %(lr, begin_epoch))
-
-    steps = [epoch_size * (x - begin_epoch) for x in cfg.lr_step_epochs if x - begin_epoch > 0]
-    return (lr, mx.lr_scheduler.MultiFactorScheduler(step=steps, factor=cfg.lr_factor))
+# def get_lr_scheduler(kv):
+#     if cfg.lr_factor is None or cfg.lr_factor >= 1:
+#         return (cfg.lr, None)
+#     epoch_size = cfg.num_examples / cfg.batch_size
+#     if 'dist' in cfg.kv_store:
+#         epoch_size /= kv.num_workers
+#     begin_epoch = cfg.load_epoch if cfg.load_epoch else 0
+#     lr = cfg.lr
+#     for s in cfg.lr_step_epochs:
+#         if begin_epoch >= s:
+#             lr *= cfg.lr_factor
+#     if lr != cfg.lr:
+#         logging.info('Adjust learning rate to %e for epoch %d' %(lr, begin_epoch))
+#
+#     steps = [epoch_size * (x - begin_epoch) for x in cfg.lr_step_epochs if x - begin_epoch > 0]
+#     return (lr, mx.lr_scheduler.MultiFactorScheduler(step=steps, factor=cfg.lr_factor))
 
 #TODO: rescale_grad?
 sgd_opt = mx.optimizer.SGD(learning_rate=cfg.lr, momentum=cfg.mom, wd=cfg.wd, rescale_grad=1/cfg.batch_size)
@@ -93,20 +92,20 @@ def fit(network, data_loader, **kwargs):
     checkpoint = save_model(kv.rank)
 
     # devices for training
-    devs = mx.cpu() if cfg.gpus is None or cfg.gpus is '' else \
-        [mx.gpu(int(i)) for i in cfg.gpus.split(',')]
+    devs = mx.cpu() if cfg.gpus is None or len(cfg.gpus) == 0 \
+        else [mx.gpu(int(i)) for i in cfg.gpus]
 
     # learning rate
-    lr, lr_scheduler = get_lr_scheduler(kv)
+    # lr, lr_scheduler = get_lr_scheduler(kv)
 
     # create model
     model = mx.mod.Module(context=devs, symbol=network)
 
-    optimizer_params = {
-            'learning_rate': lr,
-            'momentum': cfg.mom,
-            'wd': cfg.wd,
-            'lr_scheduler': lr_scheduler}
+    # optimizer_params = {
+    #         'learning_rate': lr,
+    #         'momentum': cfg.mom,
+    #         'wd': cfg.wd,
+    #         'lr_scheduler': lr_scheduler}
 
     monitor = mx.mon.Monitor(cfg.monitor, pattern="inception_4e_3x3_reduce_weight|learning_rate|softmax_label") if cfg.monitor > 0 else None
 
@@ -122,8 +121,8 @@ def fit(network, data_loader, **kwargs):
 
     # evaluation metrices
     eval_metrics = ['accuracy', 'ce']
-    if cfg.top_k > 0:
-        eval_metrics.append(mx.metric.create('top_k_accuracy', top_k=cfg.top_k))
+    # if cfg.top_k > 0:
+    #     eval_metrics.append(mx.metric.create('top_k_accuracy', top_k=cfg.top_k))
 
     # callbacks that run after each batch
     batch_end_callbacks = [mx.callback.Speedometer(cfg.batch_size, cfg.disp_batches), lr_callback]

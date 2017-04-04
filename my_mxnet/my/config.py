@@ -6,28 +6,28 @@ model_prefix="log/train/model"
 # train record data path
 data_train="/home/mpiNode/data/img.rec"
 # test record data path
-data_test="/home/mpiNode/data/img_test.rec"
+data_test="/home/mpiNode/data/img.rec"
 # the validation data
 data_valid=None #"/home/mpiNode/data/img.rec"
 # initial learning rate
 lr=0.05
 pow=0.5
 end_lr=0.0001
-decay_nbatch=80000
+decay_nbatch=60000
 # the ratio to reduce lr on each step
-lr_factor=0.5
+# lr_factor=0.5
 # the batch size
 batch_size=800
 # key-value store type
 kv_store="local" #"dist"
-# the epochs to reduce the lr, e.g. 30,60
-lr_step_epochs=(1, 2, 3)
 # 1 means test reading speed without training
 test_io=False
 # show progress for every n batches
 disp_batches=40
 # list of gpus to run, e.g. 0 or 0,2,5. empty means using cpu
-gpus="0,1,2,3"
+gpus=[0, 1, 2, 3]
+# number workers
+num_workers = len(gpus)
 # momentum  for sgd
 mom=0.9
 # weight decay for sgd
@@ -37,13 +37,10 @@ monitor=200
 #the neural network to use
 init_xavier=True
 # report the top-k accuracy. 0 means no report.
-top_k=0
-# the optimizer type default='sgd'
-optimizer='sgd'
+# top_k=0
 # max num of epochs
-num_epochs=40
-# number workers
-num_workers = 4
+num_epochs=100
+
 
 
 # read_data
