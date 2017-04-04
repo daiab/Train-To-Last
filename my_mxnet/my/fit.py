@@ -44,6 +44,11 @@ def get_lr_scheduler(kv):
     steps = [epoch_size * (x - begin_epoch) for x in cfg.lr_step_epochs if x - begin_epoch > 0]
     return (lr, mx.lr_scheduler.MultiFactorScheduler(step=steps, factor=cfg.lr_factor))
 
+sgd_opt = mx.optimizer.SGD(learning_rate=0.005, momentum=0.9, wd=0.0001)
+def lr_callback(param):
+    if param.nbatch % 10 == 0:
+      sgd_opt.lr /= 2 # decrease learning rate by a factor of 10 every 10 batches
+    print('nbatch:%d, learning rate:%f' % (param.nbatch, sgd_opt.lr))
 
 def fit(network, data_loader, **kwargs):
     # kvstore
@@ -117,7 +122,7 @@ def fit(network, data_loader, **kwargs):
         eval_metrics.append(mx.metric.create('top_k_accuracy', top_k=cfg.top_k))
 
     # callbacks that run after each batch
-    batch_end_callbacks = [mx.callback.Speedometer(cfg.batch_size, cfg.disp_batches)]
+    batch_end_callbacks = [mx.callback.Speedometer(cfg.batch_size, cfg.disp_batches), lr_callback]
     if 'batch_end_callback' in kwargs:
         cbs = kwargs['batch_end_callback']
         batch_end_callbacks += cbs if isinstance(cbs, list) else [cbs]
@@ -129,7 +134,8 @@ def fit(network, data_loader, **kwargs):
         eval_data          = valid,
         eval_metric        = eval_metrics,
         kvstore            = kv,
-        optimizer          = cfg.optimizer,
+        # optimizer          = cfg.optimizer,
+        optimizer          = sgd_opt,
         optimizer_params   = optimizer_params,
         initializer        = initializer,
         arg_params         = arg_params,
