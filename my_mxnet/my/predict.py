@@ -32,18 +32,18 @@ def predict(network, data_loader):
     print("===== symbol internals ====")
     print(all_layers.list_outputs()[-10:-1])
 
-    sym_feature = all_layers['full-connect-fc']
+    sym_feature = all_layers['flatten-fc_output']
     mod_feature = mx.mod.Module(symbol=sym_feature, context=mx.gpu())
     mod_feature.bind(for_training=False, data_shapes=[('data', (1, 3, 224, 224))])
     mod_feature.set_params(arg_params, aux_params)
-
-    data_loader.reset()
-    data_test = data_loader.next()
+    data_iter = data_loader()
+    data_iter.reset()
+    data_test = data_iter.next()
     while True:
         if data_test is None:
             break
         mod_feature.forward(data_test)
         extract_feature = mod_feature.get_outputs()[0].asnumpy()
         logging.info(extract_feature.shape)
-        data_test = data_loader.next()
+        data_test = data_iter.next()
 
