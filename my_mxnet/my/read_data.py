@@ -28,7 +28,7 @@ def get_rec_iter(kv=None):
         # max_shear_ratio     = cfg.max_random_shear_ratio,
         rand_mirror         = cfg.random_mirror,
         preprocess_threads  = cfg.data_nthreads,
-        shuffle             = True,
+        shuffle             = False,
         num_parts           = nworker,
         part_index          = rank)
     if cfg.data_valid is None:

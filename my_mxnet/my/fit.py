@@ -34,6 +34,7 @@ def get_lr_scheduler(kv):
         epoch_size /= kv.num_workers
     begin_epoch = cfg.load_epoch if cfg.load_epoch else 0
     lr = cfg.lr
+    # TODO
     for s in cfg.lr_step_epochs:
         if begin_epoch >= s:
             lr *= cfg.lr_factor
@@ -98,7 +99,7 @@ def fit(network, data_loader, **kwargs):
             'wd': cfg.wd,
             'lr_scheduler': lr_scheduler}
 
-    monitor = mx.mon.Monitor(cfg.monitor, pattern=".*weight|learning_rate|softmax_label") if cfg.monitor > 0 else None
+    monitor = mx.mon.Monitor(cfg.monitor, pattern="inception_4e_3x3_reduce_weight|learning_rate|softmax_label") if cfg.monitor > 0 else None
 
     if cfg.init_xavier:
         logging.info("init with xavier")
@@ -111,7 +112,7 @@ def fit(network, data_loader, **kwargs):
 
 
     # evaluation metrices
-    eval_metrics = ['accuracy', 'cross-entropy']
+    eval_metrics = ['accuracy', 'ce']
     if cfg.top_k > 0:
         eval_metrics.append(mx.metric.create('top_k_accuracy', top_k=cfg.top_k))
 

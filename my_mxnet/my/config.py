@@ -7,7 +7,7 @@ data_train="/home/mpiNode/data/img.rec"
 # the validation data
 data_valid=None #"/home/mpiNode/data/img.rec"
 # initial learning rate
-lr=0.05
+lr=0.1
 # the ratio to reduce lr on each step
 lr_factor=0.5
 # the batch size
@@ -15,11 +15,11 @@ batch_size=800
 # key-value store type
 kv_store="local" #"dist"
 # the epochs to reduce the lr, e.g. 30,60
-lr_step_epochs=(10000, 20000, 40000)
+lr_step_epochs=(3, 6, 12)
 # 1 means test reading speed without training
 test_io=False
 # show progress for every n batches
-disp_batches=55
+disp_batches=40
 # list of gpus to run, e.g. 0 or 0,2,5. empty means using cpu
 gpus="0,1,2,3"
 # momentum  for sgd
@@ -27,7 +27,7 @@ mom=0.9
 # weight decay for sgd
 wd=0.0001
 # log network parameters every N iters if larger than 0
-monitor=100
+monitor=200
 #the neural network to use
 init_xavier=True
 # report the top-k accuracy. 0 means no report.

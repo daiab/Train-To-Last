@@ -9,3 +9,5 @@ fit.fit(sym.layer['softmax'], data.get_rec_iter)
 
 
 # export DMLC_ROLE=worker; export DMLC_NUM_SERVER=4 ;python my_mxnet/my/train.py
+# dist train:
+# http://mxnet.io/tutorials/computer_vision/image_classification.html?highlight=learning%20rate#distributed-training
