@@ -10,7 +10,7 @@ data_valid=None #"/home/mpiNode/data/img.rec"
 lr=0.05
 pow=0.5
 end_lr=0.0001
-decay_steps=1000
+decay_nbatch=80000
 # the ratio to reduce lr on each step
 lr_factor=0.5
 # the batch size
