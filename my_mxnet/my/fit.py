@@ -111,7 +111,7 @@ def fit(network, data_loader, **kwargs):
 
 
     # evaluation metrices
-    eval_metrics = ['accuracy']
+    eval_metrics = ['accuracy', 'cross-entropy']
     if cfg.top_k > 0:
         eval_metrics.append(mx.metric.create('top_k_accuracy', top_k=cfg.top_k))
 
