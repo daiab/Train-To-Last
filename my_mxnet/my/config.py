@@ -8,6 +8,9 @@ data_train="/home/mpiNode/data/img.rec"
 data_valid=None #"/home/mpiNode/data/img.rec"
 # initial learning rate
 lr=0.1
+pow=0.5
+end_lr=0.0001
+decay_steps=1000
 # the ratio to reduce lr on each step
 lr_factor=0.5
 # the batch size

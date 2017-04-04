@@ -44,11 +44,11 @@ def get_lr_scheduler(kv):
     steps = [epoch_size * (x - begin_epoch) for x in cfg.lr_step_epochs if x - begin_epoch > 0]
     return (lr, mx.lr_scheduler.MultiFactorScheduler(step=steps, factor=cfg.lr_factor))
 
-sgd_opt = mx.optimizer.SGD(learning_rate=0.005, momentum=0.9, wd=0.0001)
+sgd_opt = mx.optimizer.SGD(learning_rate=cfg.lr, momentum=cfg.mom, wd=cfg.wd)
 def lr_callback(param):
-    if param.nbatch % 10 == 0:
-      sgd_opt.lr /= 2 # decrease learning rate by a factor of 10 every 10 batches
-    print('nbatch:%d, learning rate:%f' % (param.nbatch, sgd_opt.lr))
+    sgd_opt.lr = (1 - param.nbatch / cfg.decay_steps) ** cfg.pow * (cfg.lr - cfg.end_lr) + cfg.end_lr
+    if param.nbatch % cfg.disp_batches:
+        print('nbatch:%d, learning rate:%f' % (param.nbatch, sgd_opt.lr))
 
 def fit(network, data_loader, **kwargs):
     # kvstore
