@@ -49,3 +49,19 @@ def get_rec_iter(kv=None):
         num_parts           = nworker,
         part_index          = rank)
     return (train, valid)
+
+def get_rec_iter_test(batch_size=1):
+    test = mx.io.ImageRecordIter(
+        path_imgrec=cfg.data_test,
+        label_width=1,
+        mean_r=cfg.rgb_mean[0],
+        mean_g=cfg.rgb_mean[1],
+        mean_b=cfg.rgb_mean[2],
+        data_name='data',
+        # label_name='softmax_label',
+        batch_size=batch_size,
+        data_shape=cfg.image_shape,
+        preprocess_threads=cfg.data_nthreads,
+        rand_crop=False,
+        rand_mirror=False)
+    return test

@@ -1,3 +1,4 @@
+is_train=True
 # load the model on an epoch using the model-load-prefix
 load_epoch=None
 # model prefix
