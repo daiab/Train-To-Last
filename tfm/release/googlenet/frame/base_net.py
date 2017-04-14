@@ -93,7 +93,7 @@ class BaseNet(object):
         '''Construct the network. '''
         raise NotImplementedError('Must be implemented by the subclass.')
 
-    def batch_norm(self, inputs, decay=0.999, epsilon=1e-7, name="batch_norm"):
+    def batch_norm(self, inputs, decay=0.995, epsilon=1e-7, name="batch_norm"):
         shape = inputs.get_shape()[-1]
         axis = list(range(len(inputs.get_shape()) - 1))
         gamma = tf.get_variable(name=name + "-gamma", shape=[shape], dtype=tf.float32,

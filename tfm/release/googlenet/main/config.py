@@ -9,7 +9,7 @@ worker_hosts = ["10.29.150.102:2223", "10.29.150.102:2224", "10.29.150.102:2225"
 
 # common config param
 is_training = True
-log_dir="log/"
+log_dir="tfm/log/"
 
 data_dir="/home/mpiNode/data/"
 tfrecords_filename_train = [data_dir + 'ms_train_data.tfrecords']
@@ -28,24 +28,26 @@ batch_size = 224
 
 
 # model parameters
-class_num = 10575
-
-
+class_num = 41857
+# the number of training examples
+num_examples=3095536
+# max num of epochs
+num_epochs=8
 # train parameters
-iter_num = 100000
-decay_steps=iter_num * 1.1
+iter_num = num_epochs * int(num_examples / batch_size)
+decay_steps=iter_num
 print_loss_step = 40
-queue_capacity = 10000
-num_threads = 2
+queue_capacity = batch_size * 10
+num_threads = 8
 is_writer_summary=False
 is_sync=True
 
 
 def get_logger(file_name):
     logging.basicConfig(level=logging.DEBUG,
-                              format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
+                              format='%(asctime)s %(filename)s[line:%(lineno)d] %(message)s',
                               datefmt='%b %d %Y %H:%M:%S',
-                              filename=log_dir + 'runtime/tensorflow.log',
+                              filename='%sruntime/%s.log' %(log_dir, net_name),
                               filemode='w')
     return logging.getLogger(file_name)
 
